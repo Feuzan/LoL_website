@@ -1,0 +1,115 @@
+/* style.css — thème "LoL officiel" sombre + accents dorés (mobile-first) */
+:root{
+  --bg:#05060b;
+  --panel:#0e1116;
+  --accent:#b98f2b;
+  --accent-deep:#7b5f1f;
+  --muted:#98a3b3;
+  --glass: rgba(255,255,255,0.03);
+  --radius:14px;
+  --maxw:1200px;
+  --gold-gradient: linear-gradient(180deg,#d1b25a,#a67c23);
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color-scheme: dark;
+  color: #eaf0ff;
+}
+
+/* Reset */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:radial-gradient(1200px 600px at 10% 10%, rgba(185,143,43,0.05), transparent), var(--bg);-webkit-font-smoothing:antialiased}
+.container{max-width:var(--maxw);margin:0 auto;padding:18px}
+
+/* Header */
+.site-header{position:sticky;top:0;z-index:50;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);backdrop-filter: blur(6px);border-bottom:1px solid rgba(255,255,255,0.03)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px}
+.brand{display:flex;gap:12px;align-items:center}
+.logo{width:56px;height:56px;object-fit:contain}
+.brand-title{font-family:'Playfair Display', serif;font-size:20px;letter-spacing:0.6px;margin:0}
+.brand-sub{color:var(--muted);font-size:12px;margin-top:2px}
+
+/* Nav */
+.main-nav{display:flex;gap:8px;align-items:center}
+.nav-link{color:var(--muted);text-decoration:none;padding:8px 12px;border-radius:10px;border:1px solid rgba(255,255,255,0.02);font-weight:600}
+.nav-link:hover{color:#fff;border-color:rgba(255,255,255,0.06)}
+.nav-link.active{background:linear-gradient(180deg, rgba(185,143,43,0.12), rgba(185,143,43,0.04));border-color:rgba(185,143,43,0.15);color:var(--accent)}
+
+/* Hamburger */
+.hamburger{display:none;background:transparent;border:0;color:var(--muted);font-size:22px}
+
+/* Cards and layout */
+.card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02));border-radius:var(--radius);padding:14px;border:1px solid rgba(255,255,255,0.03)}
+.hero{display:grid;grid-template-columns:1fr;gap:16px;margin:18px 0}
+.hero-left h2{font-family:'Playfair Display', serif;font-size:28px;margin-bottom:8px}
+.accent{color:var(--accent)}
+.hero-actions{display:flex;gap:10px;margin-top:12px}
+.btn{display:inline-block;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:700}
+.btn.primary{background:var(--gold-gradient);color:#08121a}
+.btn.ghost{border:1px solid rgba(255,255,255,0.04);color:var(--muted);background:transparent}
+
+/* grid */
+.grid{display:grid;grid-template-columns:1fr;gap:12px;margin-top:12px}
+.cards .card{display:flex;flex-direction:column;gap:10px}
+
+/* toolbar (champions) */
+.toolbar{display:flex;gap:10px;align-items:center}
+.toolbar input, .toolbar select{flex:1;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:inherit}
+
+/* champions grid */
+.champ-grid{display:grid;grid-template-columns:repeat(1,1fr);gap:12px;margin-top:12px}
+.champ-card{
+  display:flex;
+  gap:12px;
+  align-items:center;
+  padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);
+  background: linear-gradient(90deg, rgba(255,255,255,0.01), transparent);
+}
+.champ-card .thumb{
+  width:120px;
+  height:120px;             /* uniform square container */
+  border-radius:10px;
+  overflow:hidden;
+  flex:0 0 120px;
+  background:linear-gradient(180deg, rgba(0,0,0,0.2), rgba(0,0,0,0.1));
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.champ-card .thumb img{
+  width:100%;
+  height:100%;
+  object-fit:cover;          /* preserves aspect ratio without squashing */
+  transform-origin:center;
+}
+.champ-card h3{margin:0;font-size:18px}
+.champ-card p{margin:4px 0;color:var(--muted);font-size:13px}
+.champ-card .meta{margin-left:auto;text-align:right}
+
+/* loader */
+.loader{text-align:center;color:var(--muted);padding:18px;margin-top:12px}
+
+/* card-grid for univers */
+.card-grid{display:grid;grid-template-columns:1fr;gap:12px;margin-top:12px}
+.card.large img{width:100%;height:180px;object-fit:cover;border-radius:8px;margin-bottom:8px}
+
+/* footer */
+.site-footer{padding:18px 0;border-top:1px solid rgba(255,255,255,0.02);color:var(--muted);font-size:13px;margin-top:24px}
+
+/* responsive layout */
+@media(min-width:800px){
+  .hero{grid-template-columns:1fr 360px;align-items:start}
+  .grid{grid-template-columns:repeat(3,1fr)}
+  .card-grid{grid-template-columns:repeat(3,1fr)}
+  .champ-grid{grid-template-columns:repeat(2,1fr)}
+  .hamburger{display:none}
+}
+@media(min-width:1100px){
+  .champ-grid{grid-template-columns:repeat(3,1fr)}
+}
+@media(max-width:799px){
+  .main-nav{display:none}
+  .hamburger{display:block}
+  .champ-card{flex-direction:row}
+  .champ-card .meta{margin-left:auto}
+  .grid{grid-template-columns:1fr}
+  .card-grid{grid-template-columns:1fr}
+}

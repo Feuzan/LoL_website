@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>League Fan Hub — Champions</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <script src="champions.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/d/d8/League_of_Legends_2019_vector.svg" alt="League">
+        <div>
+          <h1 class="brand-title">League Fan Hub</h1>
+          <p class="brand-sub">Champions</p>
+        </div>
+      </div>
+
+      <nav class="main-nav">
+        <a href="index.html" class="nav-link">Accueil</a>
+        <a href="presentation.html" class="nav-link">Présentation</a>
+        <a href="champions.html" class="nav-link active">Champions</a>
+        <a href="univers.html" class="nav-link">Univers Étendu</a>
+        <a href="esport.html" class="nav-link">Esport</a>
+      </nav>
+
+      <button id="menuToggle3" class="hamburger" aria-label="Ouvrir le menu">☰</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="toolbar card">
+      <input id="searchChamp" type="search" placeholder="Rechercher un champion (ex: Ahri)" aria-label="Rechercher champion">
+      <select id="filterRole" aria-label="Filtrer par rôle"><option value="">Tous rôles</option></select>
+    </section>
+
+    <section id="champGrid" class="champ-grid"></section>
+
+    <div id="loader" class="card loader">Chargement des champions…</div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>Données : Data Dragon (Riot). Site non officiel.</small>
+    </div>
+  </footer>
+</body>
+</html>
