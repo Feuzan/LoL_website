@@ -113,3 +113,47 @@ html,body{height:100%;background:radial-gradient(1200px 600px at 10% 10%, rgba(1
   .grid{grid-template-columns:1fr}
   .card-grid{grid-template-columns:1fr}
 }
+
+/* CSS Variables and base theme settings */
+:root {
+  /* Color scheme variables */
+  --bg:#05060b;
+  --panel:#0e1116;
+  --accent:#b98f2b;
+  /* ... other variables ... */
+}
+
+/* CSS Reset and base styles */
+* {box-sizing:border-box;margin:0;padding:0}
+
+/* Layout containers */
+.container {
+  max-width:var(--maxw);
+  margin:0 auto;
+  padding:18px;
+}
+
+/* Header styling */
+.site-header {
+  /* Sticky header with glass effect */
+  position:sticky;
+  top:0;
+  /* ... other header styles ... */
+}
+
+/* Navigation styles */
+.main-nav {
+  /* Flex navigation layout */
+  display:flex;
+  gap:8px;
+  /* ... other nav styles ... */
+}
+
+/* Responsive media queries */
+@media(min-width:800px) {
+  /* Desktop layout adjustments */
+}
+
+@media(max-width:799px) {
+  /* Mobile layout adjustments */
+}

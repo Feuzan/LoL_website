@@ -22,4 +22,16 @@ document.addEventListener('DOMContentLoaded', ()=>{
       a.classList.add('active');
     }
   });
+
+  // Handle mobile menu toggle
+  document.addEventListener('DOMContentLoaded', ()=>{
+    // Setup menu toggle buttons
+    document.querySelectorAll('[id^="menuToggle"]').forEach(btn => {
+      // Add click handlers for mobile menu
+    });
+
+    // Highlight active navigation link
+    const links = document.querySelectorAll('.main-nav .nav-link');
+    // Set active class based on current URL
+  });
 });

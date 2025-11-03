@@ -1,16 +1,21 @@
 <!doctype html>
 <html lang="fr">
 <head>
+  <!-- Basic meta tags for character encoding and responsive viewport -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>League Fan Hub — Champions</title>
 
+  <!-- External resources: Google Fonts and local assets -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
+  
+  <!-- JavaScript files with defer to load after HTML parsing -->
   <script src="champions.js" defer></script>
   <script src="script.js" defer></script>
 </head>
 <body>
+  <!-- Site header with navigation -->
   <header class="site-header">
     <div class="container header-inner">
       <div class="brand">
@@ -33,17 +38,22 @@
     </div>
   </header>
 
+  <!-- Main content area -->
   <main class="container">
+    <!-- Search and filter toolbar -->
     <section class="toolbar card">
       <input id="searchChamp" type="search" placeholder="Rechercher un champion (ex: Ahri)" aria-label="Rechercher champion">
       <select id="filterRole" aria-label="Filtrer par rôle"><option value="">Tous rôles</option></select>
     </section>
 
+    <!-- Dynamic champion grid populated by champions.js -->
     <section id="champGrid" class="champ-grid"></section>
 
+    <!-- Loading indicator -->
     <div id="loader" class="card loader">Chargement des champions…</div>
   </main>
 
+  <!-- Site footer -->
   <footer class="site-footer">
     <div class="container">
       <small>Données : Data Dragon (Riot). Site non officiel.</small>
