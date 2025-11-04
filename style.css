@@ -75,8 +75,7 @@ body {
 }
 .brand-title {
   font-family: League;
-  src: local("League"),
-    url("../fonts/LeagueSpartan-Variable.woff2") format("woff2");
+  src: url(assets/fonts/League.otf);
   font-size: 20px;
   letter-spacing: 0.6px;
   margin: 0;
