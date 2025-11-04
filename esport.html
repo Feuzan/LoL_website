@@ -23,7 +23,7 @@
         </div>
       </div>
 
-      <nav class="main-nav">
+      <nav class="main-nav" aria-label="Navigation principale">
         <a href="index.html" class="nav-link">Accueil</a>
         <a href="presentation.html" class="nav-link">Présentation</a>
         <a href="champions.html" class="nav-link">Champions</a>
@@ -37,25 +37,109 @@
 
   <!-- Main content area -->
   <main class="container">
-    <!-- Esports information card -->
-    <section class="page card">
-      <!-- Main heading and introduction -->
-      <h2>La scène esport de League of Legends</h2>
+    <!-- Overview: quick intro -->
+    <section class="page card" aria-labelledby="esport-h1">
+      <h2 id="esport-h1">La scène esport de League of Legends</h2>
       <p class="muted">Compétitions majeures : LEC, LCS, LCK, MSI, Worlds. Pour récupérer résultats live, il faut se connecter à des APIs esportives ou flux officiels.</p>
+    </section>
 
-      <!-- Major competitions list -->
-      <h3>Compétitions principales</h3>
+    <!-- Recent results / recap -->
+    <section class="card" aria-labelledby="recent-results">
+      <h3 id="recent-results">Récapitulatif récent</h3>
+      <p class="muted">Résultats et faits marquants des dernières compétitions.</p>
       <ul>
-        <li><strong>Worlds</strong> — Championnat du Monde annuel</li>
-        <li><strong>MSI</strong> — Mid-Season Invitational</li>
-        <li><strong>LEC / LCS / LCK</strong> — ligues régionales</li>
+        <li><strong>Worlds 2023</strong> — Vainqueur : T1 (exemple)</li>
+        <li><strong>MSI 2024</strong> — Vainqueur : RNG (exemple)</li>
+        <li><strong>LEC Spring 2025</strong> — Vainqueur : G2 Esports (exemple)</li>
       </ul>
+      <p class="muted small">Les données ci-dessus sont des exemples. Pour des résultats live, consultez les liens officiels ci-dessous.</p>
+    </section>
 
-      <!-- Media section -->
-      <div class="card media">
-        <img src="https://cdn.oneesports.gg/cdn-data/2023/10/LeagueOfLegends_Worlds2023_Trophy.jpg" alt="Worlds trophy">
-        <p class="muted">Trophée des Worlds (illustration).</p>
+    <!-- Upcoming calendar -->
+    <section class="card" aria-labelledby="upcoming">
+      <h3 id="upcoming">Calendrier à venir</h3>
+      <table class="card-table" aria-describedby="upcoming-desc">
+        <caption id="upcoming-desc" class="muted">Principaux événements à court terme</caption>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Événement</th>
+            <th>Lieu / Format</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>2025-03-12</td>
+            <td>Playoffs LEC Spring</td>
+            <td>Online / BO5</td>
+          </tr>
+          <tr>
+            <td>2025-05-10</td>
+            <td>MSI</td>
+            <td>International — format mixte</td>
+          </tr>
+          <tr>
+            <td>2025-10-XX</td>
+            <td>Worlds</td>
+            <td>Championnats du Monde</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Top teams by region -->
+    <section class="card" aria-labelledby="top-teams">
+      <h3 id="top-teams">Équipes à surveiller</h3>
+      <p class="muted">Sélection de franchises fortes par région.</p>
+      <div class="grid cards">
+        <article class="card small">
+          <h4>LEC</h4>
+          <ul>
+            <li>G2 Esports</li>
+            <li>Fnatic</li>
+            <li>MAD Lions</li>
+            <li>Karmine Corp</li>
+          </ul>
+        </article>
+
+        <article class="card small">
+          <h4>LCK</h4>
+          <ul>
+            <li>T1</li>
+            <li>Gen.G</li>
+            <li>DWG KIA</li>
+          </ul>
+        </article>
+
+        <article class="card small">
+          <h4>LCS</h4>
+          <ul>
+            <li>100 Thieves</li>
+            <li>TCL / NA top teams</li>
+            <li>FlyqQuest</li>
+          </ul>
+        </article>
+
+        <article class="card small">
+          <h4>Reste du monde</h4>
+          <ul>
+            <li>RNG (LPL)</li>
+            <li>EDward Gaming (LPL)</li>
+          </ul>
+        </article>
       </div>
+    </section>
+
+    <!-- How to follow: streaming & resources -->
+    <section class="card" aria-labelledby="follow">
+      <h3 id="follow">Suivre les compétitions</h3>
+      <p class="muted">Chaînes et ressources officielles et communautaires.</p>
+      <ul>
+        <li><a href="https://lolesports.com" target="_blank" rel="noopener">LoL Esports — site officiel</a></li>
+        <li><a href="https://www.twitch.tv/riotgames" target="_blank" rel="noopener">Twitch — flux officiels</a></li>
+        <li><a href="https://www.youtube.com/riotgames" target="_blank" rel="noopener">YouTube — highlights officiels</a></li>
+        <li><a href="https://liquipedia.net/leagueoflegends/" target="_blank" rel="noopener">Liquipedia — historique & statistiques</a></li>
+      </ul>
     </section>
   </main>
 
@@ -65,5 +149,18 @@
       <small>Site non officiel — fan project.</small>
     </div>
   </footer>
+
+  <!-- Small helper script: collapse long tables on mobile (optionnel) -->
+  <script>
+    // amélioration mineure: rendre les tables scrollables sur mobile
+    document.addEventListener('DOMContentLoaded', ()=> {
+      document.querySelectorAll('.card-table').forEach(t => {
+        const wrapper = document.createElement('div');
+        wrapper.style.overflowX = 'auto';
+        wrapper.appendChild(t.cloneNode(true));
+        t.replaceWith(wrapper);
+      });
+    });
+  </script>
 </body>
 </html>
