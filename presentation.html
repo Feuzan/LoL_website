@@ -1,29 +1,30 @@
 <!DOCTYPE html>
 <html lang="fr">
   <head>
-    <!-- Standard meta tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>LoL - Presentation</title>
+    <title>League of Legends — Présentation</title>
 
-    <!-- External resources -->
     <link
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600&display=swap"
       rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     />
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" type="image/png" href="assets/Logo.png" />
     <script src="script.js" defer></script>
   </head>
   <body>
-    <!-- Site header with responsive navigation -->
     <header class="site-header">
       <div class="container header-inner">
         <div class="brand">
           <img
             class="logo"
             src="https://upload.wikimedia.org/wikipedia/commons/d/d8/League_of_Legends_2019_vector.svg"
-            alt="League"
+            alt="Logo League of Legends"
           />
           <div>
             <h1 class="brand-title">Présentation</h1>
@@ -31,11 +32,11 @@
           </div>
         </div>
 
-        <nav class="main-nav">
+        <nav class="main-nav" aria-label="Navigation principale">
           <a href="index.html" class="nav-link">Accueil</a>
-          <a href="presentation.html" class="nav-link active">Présentation</a>
+          <a href="presentation.html" class="nav-link">Présentation</a>
           <a href="champions.html" class="nav-link">Champions</a>
-          <a href="univers.html" class="nav-link">Univers Étendu</a>
+          <a href="univers.html" class="nav-link">Univers</a>
           <a href="esport.html" class="nav-link">Esport</a>
         </nav>
 
@@ -45,48 +46,257 @@
       </div>
     </header>
 
-    <!-- Main content area -->
     <main class="container">
-      <!-- Game presentation card -->
-      <section class="page card">
-        <!-- Introduction section -->
-        <h2>Qu'est-ce que League of Legends ?</h2>
-        <p>
-          League of Legends est un MOBA développé par Riot Games, sorti en 2009.
-          Les joueurs s'affrontent en équipe pour détruire le Nexus adverse. Le
-          jeu s'est développé en un univers riche — Runeterra — avec du lore,
-          des médias et des jeux dérivés.
-        </p>
+      <section class="hero card">
+        <div class="hero-content">
+          <h2>Découvrez <span class="accent">League of Legends</span></h2>
+          <p class="hero-text">
+            Plongez dans un univers où stratégie et action se rencontrent.
+            Rejoignez des millions de joueurs.
+          </p>
+          <div class="hero-actions">
+            <a
+              href="https://www.leagueoflegends.com/fr-fr/download/"
+              class="btn primary"
+              target="_blank"
+              rel="noopener"
+              >Télécharger</a
+            >
+            <a href="#gameplay" class="btn ghost">En savoir plus</a>
+          </div>
+        </div>
+        <img
+          class="hero-image"
+          src="https://images.contentstack.io/v3/assets/blt731acb42bb3d1659/blt462f8047cf84686f/5ef1324147e0e4286c7508a1/LOL_PROMOART_8.jpg"
+          alt="Artwork League of Legends"
+        />
+      </section>
 
-        <!-- Game modes list -->
-        <h3>Modes et spin-offs</h3>
-        <ul>
-          <li>
-            <strong>5v5 — Faille de l'invocateur</strong> : classique
-            compétitif.
-          </li>
-          <li><strong>ARAM</strong> : maps à enjeux rapides.</li>
-          <li><strong>Legends of Runeterra</strong> : jeu de cartes</li>
-          <li><strong>Teamfight Tactics</strong> : auto-battler</li>
-        </ul>
+      <section id="gameplay" class="card">
+        <h2>Principe du jeu</h2>
+        <div class="gameplay-grid">
+          <div class="gameplay-text">
+            <p>
+              League of Legends est un jeu d'équipe 5v5 où chaque joueur
+              contrôle un champion aux capacités uniques. L'objectif : détruire
+              la base adverse.
+            </p>
+            <ul class="feature-list">
+              <li>🎯 Détruire les tourelles</li>
+              <li>💰 Gagner de l'or</li>
+              <li>🏆 Prendre des objectifs</li>
+              <li>💥 Remporter des combats d'équipe</li>
+            </ul>
+          </div>
 
-        <!-- Media section -->
-        <figure class="media">
-          <img
-            src="https://cmsassets.rgpub.io/sanity/images/dsfx7636/news_live/43c43b8f561c5dfb0ddc88b58d3bfa3a47f60eec-1920x1080.jpg"
-            alt="Summoner's Rift"
-          />
-          <figcaption class="muted">
-            La Faille de l'invocateur — image illustrative.
-          </figcaption>
-        </figure>
+          <figure class="gameplay-media">
+            <img
+              src="https://cmsassets.rgpub.io/sanity/images/dsfx7636/news_live/43c43b8f561c5dfb0ddc88b58d3bfa3a47f60eec-1920x1080.jpg"
+              alt="La Faille de l'invocateur"
+            />
+            <figcaption>
+              La Faille de l'invocateur — terrain des affrontements
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- Modes, rôles, commencer, specs : structure conservée mais allégée -->
+      <section class="card">
+        <h2>Modes de jeu</h2>
+        <div class="modes-grid">
+          <article class="mode-card">
+            <img src="assets/summoners-rift.jpg" alt="Faille" />
+            <h3>Faille de l'invocateur</h3>
+            <p>Mode classique 5v5</p>
+          </article>
+          <article class="mode-card">
+            <img src="assets/aram.jpg" alt="ARAM" />
+            <h3>ARAM</h3>
+            <p>All Random All Mid — parties rapides</p>
+          </article>
+          <article class="mode-card">
+            <img src="assets/events.jpg" alt="Events" />
+            <h3>Événements</h3>
+            <p>Modes temporaires</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Les rôles</h2>
+        <div class="roles-grid">
+          <article class="role-card">
+            <i class="fas fa-shield-alt" aria-hidden="true"></i>
+            <h3>Top</h3>
+            <p>Combattants</p>
+          </article>
+          <article class="role-card">
+            <i class="fas fa-tree" aria-hidden="true"></i>
+            <h3>Jungle</h3>
+            <p>Aide aux lignes</p>
+          </article>
+          <article class="role-card">
+            <i class="fas fa-magic" aria-hidden="true"></i>
+            <h3>Mid</h3>
+            <p>Mages et assassins</p>
+          </article>
+          <article class="role-card">
+            <i class="fas fa-crosshairs" aria-hidden="true"></i>
+            <h3>ADC</h3>
+            <p>Tireurs</p>
+          </article>
+          <article class="role-card">
+            <i class="fas fa-shield-alt" aria-hidden="true"></i>
+            <h3>Support</h3>
+            <p>Protecteurs</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Commencer</h2>
+        <div class="steps-grid">
+          <div class="step-card">
+            <div class="step-number">1</div>
+            <div>
+              <h3>Créer un compte</h3>
+              <p>Inscrivez-vous sur le site officiel.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-number">2</div>
+            <div>
+              <h3>Télécharger</h3>
+              <p>Installer le client.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-number">3</div>
+            <div>
+              <h3>Tutoriel</h3>
+              <p>Apprenez les bases.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-number">4</div>
+            <div>
+              <h3>Jouer</h3>
+              <p>Commencez par IA ou matchmaking.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="card specs-section">
+        <h2>Configuration requise</h2>
+        <div class="specs-grid">
+          <div class="specs-card">
+            <h3>Minimale</h3>
+            <ul>
+              <li>CPU : 3 GHz</li>
+              <li>RAM : 4 GB</li>
+              <li>GPU : Shader model 2.0</li>
+            </ul>
+          </div>
+          <div class="specs-card">
+            <h3>Recommandée</h3>
+            <ul>
+              <li>CPU : 3 GHz+</li>
+              <li>RAM : 8 GB</li>
+              <li>GPU : GeForce 560+</li>
+            </ul>
+          </div>
+        </div>
       </section>
     </main>
 
-    <!-- Site footer -->
     <footer class="site-footer">
       <div class="container">
-        <small>Site non officiel — fan project.</small>
+        <div class="footer-wrapper">
+          <div class="footer-main">
+            <img
+              class="footer-logo"
+              src="https://upload.wikimedia.org/wikipedia/commons/d/d8/League_of_Legends_2019_vector.svg"
+              alt="Logo League of Legends"
+              width="120"
+            />
+            <p class="footer-desc">
+              Site non officiel — projet fan-made. Guides, actualités et
+              contenus pour la communauté.
+            </p>
+          </div>
+
+          <div class="footer-nav">
+            <h4>Navigation</h4>
+            <ul>
+              <li><a href="index.html">Accueil</a></li>
+              <li><a href="presentation.html">Guide débutant</a></li>
+              <li><a href="champions.html">Champions</a></li>
+              <li><a href="univers.html">Univers</a></li>
+              <li><a href="esport.html">Esport</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-external">
+            <h4>Liens officiels</h4>
+            <ul>
+              <li>
+                <a
+                  href="https://www.leagueoflegends.com"
+                  target="_blank"
+                  rel="noopener"
+                  >Site officiel</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://support.riotgames.com"
+                  target="_blank"
+                  rel="noopener"
+                  >Support</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://status.riotgames.com"
+                  target="_blank"
+                  rel="noopener"
+                  >État des serveurs</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer-social">
+            <h4>Suivez-nous</h4>
+            <div class="social-links">
+              <a href="#" aria-label="Discord"
+                ><i class="fab fa-discord"></i
+              ></a>
+              <a href="#" aria-label="Twitter"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a href="#" aria-label="YouTube"
+                ><i class="fab fa-youtube"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+
+        <hr class="footer-divider" />
+
+        <div class="footer-legal">
+          <small
+            >Site non officiel — Projet fan-made. League of Legends™ et Riot
+            Games™ sont des marques déposées de Riot Games, Inc.</small
+          >
+          <div class="legal-links">
+            <a href="#">Mentions légales</a>
+            <a href="#">Confidentialité</a>
+            <a href="#">Conditions d'utilisation</a>
+          </div>
+        </div>
       </div>
     </footer>
   </body>

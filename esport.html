@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html lang="fr">
   <head>
-    <!-- Standard meta configuration -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>LoL - Esport</title>
 
-    <!-- External resources -->
     <link
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600&display=swap"
       rel="stylesheet"
@@ -16,7 +14,6 @@
     <script src="script.js" defer></script>
   </head>
   <body>
-    <!-- Site header and navigation -->
     <header class="site-header">
       <div class="container header-inner">
         <div class="brand">
@@ -31,12 +28,12 @@
           </div>
         </div>
 
-        <nav class="main-nav" aria-label="Navigation principale">
+        <nav class="main-nav">
           <a href="index.html" class="nav-link">Accueil</a>
           <a href="presentation.html" class="nav-link">Présentation</a>
           <a href="champions.html" class="nav-link">Champions</a>
-          <a href="univers.html" class="nav-link">Univers Étendu</a>
-          <a href="esport.html" class="nav-link active">Esport</a>
+          <a href="univers.html" class="nav-link">Univers</a>
+          <a href="esport.html" class="nav-link">Esport</a>
         </nav>
 
         <button id="menuToggle5" class="hamburger" aria-label="Ouvrir le menu">
@@ -45,158 +42,206 @@
       </div>
     </header>
 
-    <!-- Main content area -->
     <main class="container">
-      <!-- Overview: quick intro -->
-      <section class="page card" aria-labelledby="esport-h1">
-        <h2 id="esport-h1">La scène esport de League of Legends</h2>
-        <p class="muted">
-          Compétitions majeures : LEC, LCS, LCK, MSI, Worlds. Pour récupérer
-          résultats live, il faut se connecter à des APIs esportives ou flux
-          officiels.
-        </p>
+      <!-- Hero Section -->
+      <section class="hero card">
+        <div class="hero-content">
+          <h2>L'Esport <span class="accent">League of Legends</span></h2>
+          <p class="hero-text">
+            Découvrez l'univers compétitif de LoL, des ligues régionales aux
+            championnats du monde. Plus de 100 millions de spectateurs suivent
+            ces événements chaque année.
+          </p>
+          <div class="hero-actions">
+            <a href="#watch" class="btn primary">Regarder en direct</a>
+            <a href="#" class="btn ghost">En savoir plus</a>
+          </div>
+        </div>
+        <img
+          src="https://cdn1.dotesports.com/wp-content/uploads/2023/11/05153520/worlds-2023-finals.jpg"
+          alt="Worlds Finals"
+          class="hero-image"
+        />
       </section>
 
-      <!-- Recent results / recap -->
-      <section class="card" aria-labelledby="recent-results">
-        <h3 id="recent-results">Récapitulatif récent</h3>
-        <p class="muted">
-          Résultats et faits marquants des dernières compétitions.
-        </p>
-        <ul>
-          <li><strong>Worlds 2023</strong> — Vainqueur : T1 (exemple)</li>
-          <li><strong>MSI 2024</strong> — Vainqueur : RNG (exemple)</li>
-          <li>
-            <strong>LEC Spring 2025</strong> — Vainqueur : G2 Esports (exemple)
-          </li>
-        </ul>
-        <p class="muted small">
-          Les données ci-dessus sont des exemples. Pour des résultats live,
-          consultez les liens officiels ci-dessous.
-        </p>
-      </section>
-
-      <!-- Upcoming calendar -->
-      <section class="card" aria-labelledby="upcoming">
-        <h3 id="upcoming">Calendrier à venir</h3>
-        <table class="card-table" aria-describedby="upcoming-desc">
-          <caption id="upcoming-desc" class="muted">
-            Principaux événements à court terme
-          </caption>
-          <thead>
-            <tr>
-              <th>Date</th>
-              <th>Événement</th>
-              <th>Lieu / Format</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>2025-03-12</td>
-              <td>Playoffs LEC Spring</td>
-              <td>Online / BO5</td>
-            </tr>
-            <tr>
-              <td>2025-05-10</td>
-              <td>MSI</td>
-              <td>International — format mixte</td>
-            </tr>
-            <tr>
-              <td>2025-10-XX</td>
-              <td>Worlds</td>
-              <td>Championnats du Monde</td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
-
-      <!-- Top teams by region -->
-      <section class="card" aria-labelledby="top-teams">
-        <h3 id="top-teams">Équipes à surveiller</h3>
-        <p class="muted">Sélection de franchises fortes par région.</p>
+      <!-- Major Tournaments -->
+      <section class="tournaments-section">
+        <h2>Compétitions Majeures</h2>
         <div class="grid cards">
-          <article class="card small">
-            <h4>LEC</h4>
-            <ul>
-              <li>G2 Esports</li>
-              <li>Fnatic</li>
-              <li>MAD Lions</li>
-              <li>Karmine Corp</li>
+          <article class="card tournament-card">
+            <img src="assets/worlds-trophy.jpg" alt="Worlds Trophy" />
+            <h3>Worlds</h3>
+            <p>Le championnat du monde, l'apogée de la saison compétitive.</p>
+            <ul class="tournament-info">
+              <li><i class="fas fa-trophy"></i> Prix: $2,225,000</li>
+              <li><i class="fas fa-users"></i> 24 équipes</li>
+              <li><i class="fas fa-globe"></i> International</li>
             </ul>
           </article>
 
-          <article class="card small">
-            <h4>LCK</h4>
-            <ul>
-              <li>T1</li>
-              <li>Gen.G</li>
-              <li>DWG KIA</li>
+          <article class="card tournament-card">
+            <img src="assets/msi-trophy.jpg" alt="MSI Trophy" />
+            <h3>MSI</h3>
+            <p>Mid-Season Invitational, tournoi international de mi-saison.</p>
+            <ul class="tournament-info">
+              <li><i class="fas fa-trophy"></i> Prix: $250,000</li>
+              <li><i class="fas fa-users"></i> 13 équipes</li>
+              <li><i class="fas fa-globe"></i> International</li>
             </ul>
           </article>
 
-          <article class="card small">
-            <h4>LCS</h4>
-            <ul>
-              <li>100 Thieves</li>
-              <li>TCL / NA top teams</li>
-              <li>FlyqQuest</li>
-            </ul>
-          </article>
-
-          <article class="card small">
-            <h4>Reste du monde</h4>
-            <ul>
-              <li>RNG (LPL)</li>
-              <li>EDward Gaming (LPL)</li>
+          <article class="card tournament-card">
+            <img src="assets/lec-trophy.jpg" alt="LEC Trophy" />
+            <h3>LEC</h3>
+            <p>La ligue européenne, l'une des plus prestigieuses au monde.</p>
+            <ul class="tournament-info">
+              <li><i class="fas fa-trophy"></i> Circuit annuel</li>
+              <li><i class="fas fa-users"></i> 10 équipes</li>
+              <li><i class="fas fa-map-marker-alt"></i> Europe</li>
             </ul>
           </article>
         </div>
       </section>
 
-      <!-- How to follow: streaming & resources -->
-      <section class="card" aria-labelledby="follow">
-        <h3 id="follow">Suivre les compétitions</h3>
-        <p class="muted">
-          Chaînes et ressources officielles et communautaires.
-        </p>
-        <ul>
-          <li>
-            <a href="https://lolesports.com" target="_blank" rel="noopener"
-              >LoL Esports — site officiel</a
-            >
-          </li>
-          <li>
-            <a
-              href="https://www.twitch.tv/riotgames"
-              target="_blank"
-              rel="noopener"
-              >Twitch — flux officiels</a
-            >
-          </li>
-          <li>
-            <a
-              href="https://www.youtube.com/riotgames"
-              target="_blank"
-              rel="noopener"
-              >YouTube — highlights officiels</a
-            >
-          </li>
-          <li>
-            <a
-              href="https://liquipedia.net/leagueoflegends/"
-              target="_blank"
-              rel="noopener"
-              >Liquipedia — historique & statistiques</a
-            >
-          </li>
-        </ul>
+      <!-- Watch Section -->
+      <section id="watch" class="watch-section card">
+        <h2>Où regarder ?</h2>
+        <div class="platforms-grid">
+          <a href="https://www.twitch.tv/otplol_" class="platform-card">
+            <i class="fab fa-twitch"></i>
+            <h3>OTP</h3>
+            <p>Stream français officiel</p>
+          </a>
+          <a href="https://www.twitch.tv/riotgames" class="platform-card">
+            <i class="fab fa-twitch"></i>
+            <h3>Riot Games</h3>
+            <p>Stream anglais officiel</p>
+          </a>
+          <a href="https://www.youtube.com/c/lolesports" class="platform-card">
+            <i class="fab fa-youtube"></i>
+            <h3>LoL Esports</h3>
+            <p>VODs et highlights</p>
+          </a>
+        </div>
+      </section>
+
+      <!-- Stats Section -->
+      <section class="stats-section">
+        <div class="grid">
+          <article class="card stat-card">
+            <div class="stat-number">5M+</div>
+            <h3>Peak Viewers</h3>
+            <p>Worlds 2023 Finals</p>
+          </article>
+
+          <article class="card stat-card">
+            <div class="stat-number">30+</div>
+            <h3>Ligues Pro</h3>
+            <p>À travers le monde</p>
+          </article>
+
+          <article class="card stat-card">
+            <div class="stat-number">$100M+</div>
+            <h3>Prize Pool</h3>
+            <p>Annuel total</p>
+          </article>
+        </div>
       </section>
     </main>
 
-    <!-- Site footer -->
     <footer class="site-footer">
       <div class="container">
-        <small>Site non officiel — fan project.</small>
+        <div class="footer-wrapper">
+          <!-- Colonne principale avec logo et description -->
+          <div class="footer-main">
+            <img
+              class="footer-logo"
+              src="https://upload.wikimedia.org/wikipedia/commons/d/d8/League_of_Legends_2019_vector.svg"
+              alt="League of Legends"
+              width="120"
+            />
+            <p class="footer-desc">
+              Découvrez l'univers de League of Legends à travers nos guides,
+              actualités et contenus exclusifs. Un site créé par des passionnés,
+              pour la communauté.
+            </p>
+          </div>
+
+          <!-- Navigation du site -->
+          <div class="footer-nav">
+            <h4>Navigation</h4>
+            <ul>
+              <li><a href="index.html">Accueil</a></li>
+              <li><a href="presentation.html">Guide débutant</a></li>
+              <li><a href="champions.html">Champions</a></li>
+              <li><a href="univers.html">Univers</a></li>
+              <li><a href="esport.html">Esport</a></li>
+            </ul>
+          </div>
+
+          <!-- Liens externes -->
+          <div class="footer-external">
+            <h4>Liens officiels</h4>
+            <ul>
+              <li>
+                <a
+                  href="https://www.leagueoflegends.com"
+                  target="_blank"
+                  rel="noopener"
+                  >Site officiel</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://support.riotgames.com"
+                  target="_blank"
+                  rel="noopener"
+                  >Support</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://status.riotgames.com"
+                  target="_blank"
+                  rel="noopener"
+                  >État des serveurs</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Réseaux sociaux -->
+          <div class="footer-social">
+            <h4>Suivez-nous</h4>
+            <div class="social-links">
+              <a href="#" aria-label="Discord"
+                ><i class="fab fa-discord"></i
+              ></a>
+              <a href="#" aria-label="Twitter"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a href="#" aria-label="YouTube"
+                ><i class="fab fa-youtube"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Séparateur -->
+        <hr class="footer-divider" />
+
+        <!-- Mentions légales -->
+        <div class="footer-legal">
+          <small>
+            Site non officiel — Projet fan-made. League of Legends™ et Riot
+            Games™ sont des marques déposées de Riot Games, Inc.
+          </small>
+          <div class="legal-links">
+            <a href="#">Mentions légales</a>
+            <a href="#">Confidentialité</a>
+            <a href="#">Conditions d'utilisation</a>
+          </div>
+        </div>
       </div>
     </footer>
 

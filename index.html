@@ -1,43 +1,42 @@
 <!DOCTYPE html>
 <html lang="fr">
   <head>
-    <!-- Meta tags for character encoding and responsive viewport -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>LoL - main page</title>
+    <title>League of Legends — Accueil</title>
 
-    <!-- External fonts from Google Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600&display=swap"
       rel="stylesheet"
     />
-
-    <!-- Site styles and scripts -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" type="image/png" href="assets/Logo.png" />
     <script src="script.js" defer></script>
   </head>
   <body>
-    <!-- Site header with logo, title and navigation -->
     <header class="site-header">
       <div class="container header-inner">
         <div class="brand">
           <img
             class="logo"
             src="https://upload.wikimedia.org/wikipedia/commons/d/d8/League_of_Legends_2019_vector.svg"
-            alt="League of Legends"
+            alt="League"
           />
           <div>
             <h1 class="brand-title">League of Legends</h1>
-            <p class="brand-sub">le MOBA le plus connu au monde !</p>
+            <p class="brand-sub">Le MOBA le plus connu au monde</p>
           </div>
         </div>
 
         <nav class="main-nav" aria-label="Navigation principale">
-          <a href="index.html" class="nav-link active">Accueil</a>
+          <a href="index.html" class="nav-link">Accueil</a>
           <a href="presentation.html" class="nav-link">Présentation</a>
           <a href="champions.html" class="nav-link">Champions</a>
-          <a href="univers.html" class="nav-link">Univers Étendu</a>
+          <a href="univers.html" class="nav-link">Univers</a>
           <a href="esport.html" class="nav-link">Esport</a>
         </nav>
 
@@ -47,75 +46,150 @@
       </div>
     </header>
 
-    <!-- Main content area -->
     <main class="container">
-      <!-- Hero section with call-to-action -->
       <section class="hero card">
         <div class="hero-left">
           <h2>
-            Entrez dans l'univers de <span class="accent">Runeterra</span>
+            Bienvenue dans l'univers de
+            <span class="accent">League of Legends</span>
           </h2>
-          <p>
-            Parcourez les fiches champions, découvrez les adaptations
-            officielles (Arcane, Riot Forge...) et suivez la scène esport.
+          <p class="hero-text">
+            Découvrez plus de 160 champions, explorez Runeterra et suivez les
+            compétitions.
           </p>
           <div class="hero-actions">
             <a class="btn primary" href="champions.html"
               >Explorer les champions</a
             >
-            <a class="btn ghost" href="univers.html">Découvrir l'univers</a>
+            <a class="btn ghost" href="presentation.html">Comment jouer</a>
           </div>
         </div>
 
         <aside class="hero-side">
-          <div class="card small">
-            <h3>À la une — Arcane</h3>
-            <img
-              src="assets/arcane_poster.jpg"
-              alt="Arcane poster"
-              width="200px"
-            />
-            <p class="muted">Série animée officielle — Piltover & Zaun.</p>
-          </div>
-
-          <div class="card small">
-            <h3>Esport</h3>
-            <p class="muted">Worlds, LEC, LCK — l'actualité compétitive.</p>
+          <div class="featured-carousel card">
+            <h3>Actualités</h3>
+            <div class="carousel-content">
+              <div class="carousel-item active">
+                <img src="assets/arcane_poster.jpg" alt="Arcane" width="150" />
+                <div class="carousel-caption"><h4>Arcane — Saison 2</h4></div>
+              </div>
+            </div>
           </div>
         </aside>
       </section>
 
-      <!-- Feature cards grid -->
       <section class="grid cards">
-        <article class="card">
-          <h3>Champions</h3>
+        <article class="card feature-card">
+          <div class="card-icon">🎮</div>
+          <h3>Nouveau joueur ?</h3>
           <p class="muted">
-            Liste complète et interactive via Data Dragon (Riot CDN).
+            Apprenez les bases et choisissez votre premier champion.
           </p>
+          <a class="btn" href="presentation.html">Guide débutant</a>
+        </article>
+
+        <article class="card feature-card">
+          <div class="card-icon">⚔️</div>
+          <h3>Champions</h3>
+          <p class="muted">Explorez notre base de données interactive.</p>
           <a class="btn" href="champions.html">Voir les champions</a>
         </article>
 
-        <article class="card">
-          <h3>Univers & Contenu alternatif</h3>
-          <p class="muted">Arcane, Riot Forge, romans et plus.</p>
-          <a class="btn" href="univers.html">Explorer l'univers</a>
-        </article>
-
-        <article class="card">
+        <article class="card feature-card">
+          <div class="card-icon">🏆</div>
           <h3>Esport</h3>
-          <p class="muted">Compétitions mondiales et ressources.</p>
-          <a class="btn" href="esport.html">Voir l'esport</a>
+          <p class="muted">Suivez les compétitions.</p>
+          <a class="btn" href="esport.html">Scène compétitive</a>
         </article>
       </section>
     </main>
 
-    <!-- Site footer -->
     <footer class="site-footer">
       <div class="container">
-        <small
-          >Site non officiel — fan project. Données champions : Data Dragon
-          (Riot). Images & contenus : Riot Games / tiers.</small
-        >
+        <div class="footer-wrapper">
+          <div class="footer-main">
+            <img
+              class="footer-logo"
+              src="https://upload.wikimedia.org/wikipedia/commons/d/d8/League_of_Legends_2019_vector.svg"
+              alt="League"
+              width="120"
+            />
+            <p class="footer-desc">
+              Site non officiel — projet fan-made. Guides et actualités pour la
+              communauté.
+            </p>
+          </div>
+
+          <div class="footer-nav">
+            <h4>Navigation</h4>
+            <ul>
+              <li><a href="index.html">Accueil</a></li>
+              <li><a href="presentation.html">Guide débutant</a></li>
+              <li><a href="champions.html">Champions</a></li>
+              <li><a href="univers.html">Univers</a></li>
+              <li><a href="esport.html">Esport</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-external">
+            <h4>Liens officiels</h4>
+            <ul>
+              <li>
+                <a
+                  href="https://www.leagueoflegends.com"
+                  target="_blank"
+                  rel="noopener"
+                  >Site officiel</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://support.riotgames.com"
+                  target="_blank"
+                  rel="noopener"
+                  >Support</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://status.riotgames.com"
+                  target="_blank"
+                  rel="noopener"
+                  >État des serveurs</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer-social">
+            <h4>Suivez-nous</h4>
+            <div class="social-links">
+              <a href="#" aria-label="Discord"
+                ><i class="fab fa-discord"></i
+              ></a>
+              <a href="#" aria-label="Twitter"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a href="#" aria-label="YouTube"
+                ><i class="fab fa-youtube"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+
+        <hr class="footer-divider" />
+
+        <div class="footer-legal">
+          <small
+            >League of Legends™ et Riot Games™ sont des marques déposées de Riot
+            Games, Inc.</small
+          >
+          <div class="legal-links">
+            <a href="#">Mentions légales</a>
+            <a href="#">Confidentialité</a>
+            <a href="#">Conditions</a>
+          </div>
+        </div>
       </div>
     </footer>
   </body>

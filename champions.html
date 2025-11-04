@@ -11,6 +11,10 @@
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" type="image/png" href="assets/Logo.png" />
 
@@ -55,7 +59,7 @@
         <input
           id="searchChamp"
           type="search"
-          placeholder="Rechercher un champion (ex: Jinx)"
+          placeholder="Rechercher un champion"
           aria-label="Rechercher champion"
         />
         <select id="filterRole" aria-label="Filtrer par rôle">
@@ -64,16 +68,105 @@
       </section>
 
       <!-- Dynamic champion grid populated by champions.js -->
-      <section id="champGrid" class="champ-grid"></section>
+      <section id="champGrid" class="champ-grid" aria-live="polite"></section>
 
       <!-- Loading indicator -->
       <div id="loader" class="card loader">Chargement des champions…</div>
     </main>
 
-    <!-- Site footer -->
     <footer class="site-footer">
       <div class="container">
-        <small>Données : Data Dragon (Riot). Site non officiel.</small>
+        <div class="footer-wrapper">
+          <!-- Colonne principale avec logo et description -->
+          <div class="footer-main">
+            <img
+              class="footer-logo"
+              src="https://upload.wikimedia.org/wikipedia/commons/d/d8/League_of_Legends_2019_vector.svg"
+              alt="League of Legends"
+              width="120"
+            />
+            <p class="footer-desc">
+              Découvrez l'univers de League of Legends à travers nos guides,
+              actualités et contenus exclusifs. Un site créé par des passionnés,
+              pour la communauté.
+            </p>
+          </div>
+
+          <!-- Navigation du site -->
+          <div class="footer-nav">
+            <h4>Navigation</h4>
+            <ul>
+              <li><a href="index.html">Accueil</a></li>
+              <li><a href="presentation.html">Guide débutant</a></li>
+              <li><a href="champions.html">Champions</a></li>
+              <li><a href="univers.html">Univers</a></li>
+              <li><a href="esport.html">Esport</a></li>
+            </ul>
+          </div>
+
+          <!-- Liens externes -->
+          <div class="footer-external">
+            <h4>Liens officiels</h4>
+            <ul>
+              <li>
+                <a
+                  href="https://www.leagueoflegends.com"
+                  target="_blank"
+                  rel="noopener"
+                  >Site officiel</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://support.riotgames.com"
+                  target="_blank"
+                  rel="noopener"
+                  >Support</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://status.riotgames.com"
+                  target="_blank"
+                  rel="noopener"
+                  >État des serveurs</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Réseaux sociaux -->
+          <div class="footer-social">
+            <h4>Suivez-nous</h4>
+            <div class="social-links">
+              <a href="#" aria-label="Discord"
+                ><i class="fab fa-discord"></i
+              ></a>
+              <a href="#" aria-label="Twitter"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a href="#" aria-label="YouTube"
+                ><i class="fab fa-youtube"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Séparateur -->
+        <hr class="footer-divider" />
+
+        <!-- Mentions légales -->
+        <div class="footer-legal">
+          <small>
+            Site non officiel — Projet fan-made. League of Legends™ et Riot
+            Games™ sont des marques déposées de Riot Games, Inc.
+          </small>
+          <div class="legal-links">
+            <a href="#">Mentions légales</a>
+            <a href="#">Confidentialité</a>
+            <a href="#">Conditions d'utilisation</a>
+          </div>
+        </div>
       </div>
     </footer>
   </body>

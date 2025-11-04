@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html lang="fr">
   <head>
-    <!-- Meta tags for character encoding and responsive viewport -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>LoL - Univers</title>
 
-    <!-- External resources and dependencies -->
     <link
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600&display=swap"
       rel="stylesheet"
@@ -16,10 +14,8 @@
     <script src="script.js" defer></script>
   </head>
   <body>
-    <!-- Site header with branding and navigation -->
     <header class="site-header">
       <div class="container header-inner">
-        <!-- Brand section with logo and title -->
         <div class="brand">
           <img
             class="logo"
@@ -28,85 +24,380 @@
           />
           <div>
             <h1 class="brand-title">Univers étendu</h1>
-            <p class="brand-sub">Exploration de Runeterra</p>
+            <p class="brand-sub">Runeterra</p>
           </div>
         </div>
 
-        <!-- Main navigation menu -->
         <nav class="main-nav">
           <a href="index.html" class="nav-link">Accueil</a>
           <a href="presentation.html" class="nav-link">Présentation</a>
           <a href="champions.html" class="nav-link">Champions</a>
-          <a href="univers.html" class="nav-link active">Univers Étendu</a>
+          <a href="univers.html" class="nav-link">Univers</a>
           <a href="esport.html" class="nav-link">Esport</a>
         </nav>
 
-        <!-- Mobile menu toggle button -->
         <button id="menuToggle4" class="hamburger" aria-label="Ouvrir le menu">
           ☰
         </button>
       </div>
     </header>
 
-    <!-- Main content area -->
     <main class="container">
-      <!-- Extended universe content section -->
-      <section class="page">
-        <!-- Section header -->
-        <h2>Contenu alternatif & adaptations</h2>
-        <p class="muted">
-          Arcane, Riot Forge, romans, comics et autres médias explorent
-          l'univers de Runeterra sous de nouvelles formes.
-        </p>
+      <!-- Hero Section -->
+      <section class="hero card">
+        <div class="hero-content">
+          <h2>L'univers de <span class="accent">Runeterra</span></h2>
+          <p class="hero-text">
+            Explorez un monde riche en histoires, en conflits et en magie.
+            Découvrez les différentes régions et leurs champions emblématiques.
+          </p>
+          <div class="hero-actions">
+            <a
+              href="https://map.leagueoflegends.com"
+              target="_blank"
+              class="btn primary"
+              >Explorer la carte interactive</a
+            >
+          </div>
+        </div>
+        <img
+          src="https://images.contentstack.io/v3/assets/blt187521ff0727be24/blt41c476486b063ef8/60ee0df1a86d837db1cf7b94/freljord-01.jpg"
+          alt="Paysage de Runeterra"
+          class="hero-image"
+        />
+      </section>
 
-        <!-- Media cards grid -->
+      <!-- Régions principales -->
+      <section class="regions-section">
+        <h2>Les grandes régions</h2>
         <div class="card-grid">
-          <!-- Arcane series card -->
           <article class="card large">
             <img
-              src="https://static.wikia.nocookie.net/leagueoflegends/images/6/63/Arcane_Season_1_Poster.jpg"
+              src="https://images.contentstack.io/v3/assets/blt187521ff0727be24/bltf5f2b8de93870aef/60ee0e7bcf88c848d5711501/demacia-01.jpg"
+              alt="Demacia"
+            />
+            <h3>Demacia</h3>
+            <p>
+              Un royaume puissant où règnent l'ordre et la justice, mais où la
+              magie est crainte et réprimée.
+            </p>
+            <div class="region-champions">
+              <span class="champion-tag">Garen</span>
+              <span class="champion-tag">Lux</span>
+              <span class="champion-tag">Sylas</span>
+            </div>
+          </article>
+
+          <article class="card large">
+            <img
+              src="https://images.contentstack.io/v3/assets/blt187521ff0727be24/blt0c8a5922b6b73eae/60ee0ee63f40e5481e85c129/noxus-01.jpg"
+              alt="Noxus"
+            />
+            <h3>Noxus</h3>
+            <p>
+              Un empire expansionniste qui valorise la force et l'ambition
+              au-dessus de tout.
+            </p>
+            <div class="region-champions">
+              <span class="champion-tag">Darius</span>
+              <span class="champion-tag">Swain</span>
+              <span class="champion-tag">Katarina</span>
+            </div>
+          </article>
+
+          <article class="card large">
+            <img
+              src="https://images.contentstack.io/v3/assets/blt187521ff0727be24/blt118c37299b1aaf85/60ee0f82bd9a853e3c9c1f27/ionia-01.jpg"
+              alt="Ionia"
+            />
+            <h3>Ionia</h3>
+            <p>Une terre de magie naturelle et de spiritualité profonde.</p>
+            <div class="region-champions">
+              <span class="champion-tag">Irelia</span>
+              <span class="champion-tag">Karma</span>
+              <span class="champion-tag">Zed</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Contenus additionnels -->
+      <section class="media-section">
+        <h2>L'univers étendu</h2>
+
+        <!-- Séries -->
+        <h3 class="section-subtitle">Séries et Animations</h3>
+        <div class="card-grid">
+          <article class="card large">
+            <img
+              src="https://cdn1.dotesports.com/wp-content/uploads/2021/11/07155642/arcane-league-of-legends.jpg"
               alt="Arcane"
             />
             <h3>Arcane</h3>
             <p>
-              Série Prime / Netflix explorant Piltover & Zaun — direction
-              artistique et storytelling remarqués.
+              Série animée Netflix retraçant les origines de Vi et Jinx dans les
+              villes de Piltover et Zaun.
             </p>
+            <div class="card-meta">
+              <span class="meta-item">2021-2024</span>
+              <span class="meta-item">Netflix</span>
+            </div>
+            <a
+              href="https://www.netflix.com/title/81435684"
+              target="_blank"
+              class="btn ghost"
+              >Regarder sur Netflix</a
+            >
           </article>
 
-          <!-- Riot Forge card -->
           <article class="card large">
             <img
-              src="https://upload.wikimedia.org/wikipedia/commons/1/12/Riot_Forge_logo.png"
-              alt="Riot Forge"
+              src="https://www.kulturegeek.fr/wp-content/uploads/2023/07/League-of-Legends-Song-of-Nunu.jpg"
+              alt="Song of Nunu"
             />
-            <h3>Riot Forge</h3>
+            <h3>Song of Nunu</h3>
             <p>
-              Label publishing: jeux solos dans l'univers LoL (Ruined King, The
-              Mageseeker...).
+              Un jeu d'aventure narratif suivant Nunu et Willump à travers le
+              Freljord.
             </p>
+            <div class="card-meta">
+              <span class="meta-item">2023</span>
+              <span class="meta-item">Riot Forge</span>
+            </div>
+            <a href="https://songofnunu.com" target="_blank" class="btn ghost"
+              >Découvrir le jeu</a
+            >
           </article>
+        </div>
 
-          <!-- Legends of Runeterra card -->
+        <!-- Jeux -->
+        <h3 class="section-subtitle">Jeux de l'univers</h3>
+        <div class="card-grid">
           <article class="card large">
             <img
-              src="https://cdn.mos.cms.futurecdn.net/bBTTv7ffhtHKbBLb4mtn8h.jpg"
+              src="https://cdn1.dotesports.com/wp-content/uploads/2022/07/20143251/Legends-of-Runeterra-scaled.jpg"
               alt="Legends of Runeterra"
             />
             <h3>Legends of Runeterra</h3>
             <p>
-              Jeu de cartes tactique qui approfondit le lore des régions et
-              champions.
+              Jeu de cartes stratégique explorant les champions et les régions
+              de Runeterra.
             </p>
+            <div class="card-meta">
+              <span class="meta-item">Free-to-play</span>
+              <span class="meta-item">PC/Mobile</span>
+            </div>
+            <a
+              href="https://playruneterra.com"
+              target="_blank"
+              class="btn ghost"
+              >Jouer gratuitement</a
+            >
           </article>
+
+          <article class="card large">
+            <img
+              src="https://cdn1.dotesports.com/wp-content/uploads/2021/01/14114606/ruined-king.jpg"
+              alt="Ruined King"
+            />
+            <h3>Ruined King</h3>
+            <p>
+              RPG au tour par tour suivant un groupe de champions face au Roi
+              Déchu.
+            </p>
+            <div class="card-meta">
+              <span class="meta-item">2021</span>
+              <span class="meta-item">Riot Forge</span>
+            </div>
+            <a href="https://ruinedking.com" target="_blank" class="btn ghost"
+              >En savoir plus</a
+            >
+          </article>
+
+          <article class="card large">
+            <img
+              src="https://www.numerama.com/wp-content/uploads/2023/06/convergence.jpg"
+              alt="Convergence"
+            />
+            <h3>Convergence</h3>
+            <p>Jeu d'action-plateforme avec Ekko dans les rues de Zaun.</p>
+            <div class="card-meta">
+              <span class="meta-item">2023</span>
+              <span class="meta-item">Riot Forge</span>
+            </div>
+            <a
+              href="https://convergence.riotgames.com"
+              target="_blank"
+              class="btn ghost"
+              >Découvrir</a
+            >
+          </article>
+        </div>
+
+        <!-- Comics et Littérature -->
+        <h3 class="section-subtitle">Comics et Romans</h3>
+        <div class="card-grid">
+          <article class="card large">
+            <img
+              src="https://universe-comics.leagueoflegends.com/comics/fr_fr/zed/issue-1/desktop/zed-01-00-cover.jpg"
+              alt="Comic Zed"
+            />
+            <h3>Comics officiels</h3>
+            <p>
+              Séries de comics Marvel explorant les histoires des champions
+              (Lux, Ashe, Zed...).
+            </p>
+            <div class="card-meta">
+              <span class="meta-item">Gratuit</span>
+              <span class="meta-item">Universe LoL</span>
+            </div>
+            <a
+              href="https://universe.leagueoflegends.com/comics"
+              target="_blank"
+              class="btn ghost"
+              >Lire les comics</a
+            >
+          </article>
+
+          <article class="card large">
+            <img
+              src="https://m.media-amazon.com/images/I/81s6cKz940L._AC_UF1000,1000_QL80_.jpg"
+              alt="Ruined King Novel"
+            />
+            <h3>Romans officiels</h3>
+            <p>
+              Collection de romans approfondissant le lore des champions et des
+              régions.
+            </p>
+            <div class="card-meta">
+              <span class="meta-item">Editions Orbit</span>
+              <span class="meta-item">Multiples langues</span>
+            </div>
+            <a
+              href="https://universe.leagueoflegends.com/stories"
+              target="_blank"
+              class="btn ghost"
+              >Explorer les histoires</a
+            >
+          </article>
+        </div>
+      </section>
+
+      <!-- Section Lore -->
+      <section class="lore-section card">
+        <h2>Histoires et conflits</h2>
+        <div class="lore-timeline">
+          <div class="timeline-item">
+            <h3>Les Guerres Runiques</h3>
+            <p>Le conflit qui a façonné le monde moderne de Runeterra.</p>
+          </div>
+          <div class="timeline-item">
+            <h3>La Chute de Shurima</h3>
+            <p>
+              L'histoire tragique d'un empire antique et de son empereur déchu.
+            </p>
+          </div>
+          <div class="timeline-item">
+            <h3>L'Invasion de Noxus</h3>
+            <p>Le conflit qui a transformé Ionia à jamais.</p>
+          </div>
         </div>
       </section>
     </main>
 
-    <!-- Site footer -->
     <footer class="site-footer">
       <div class="container">
-        <small>Sources officielles et médias partenaires.</small>
+        <div class="footer-wrapper">
+          <!-- Colonne principale avec logo et description -->
+          <div class="footer-main">
+            <img
+              class="footer-logo"
+              src="https://upload.wikimedia.org/wikipedia/commons/d/d8/League_of_Legends_2019_vector.svg"
+              alt="League of Legends"
+              width="120"
+            />
+            <p class="footer-desc">
+              Découvrez l'univers de League of Legends à travers nos guides,
+              actualités et contenus exclusifs. Un site créé par des passionnés,
+              pour la communauté.
+            </p>
+          </div>
+
+          <!-- Navigation du site -->
+          <div class="footer-nav">
+            <h4>Navigation</h4>
+            <ul>
+              <li><a href="index.html">Accueil</a></li>
+              <li><a href="presentation.html">Guide débutant</a></li>
+              <li><a href="champions.html">Champions</a></li>
+              <li><a href="univers.html">Univers</a></li>
+              <li><a href="esport.html">Esport</a></li>
+            </ul>
+          </div>
+
+          <!-- Liens externes -->
+          <div class="footer-external">
+            <h4>Liens officiels</h4>
+            <ul>
+              <li>
+                <a
+                  href="https://www.leagueoflegends.com"
+                  target="_blank"
+                  rel="noopener"
+                  >Site officiel</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://support.riotgames.com"
+                  target="_blank"
+                  rel="noopener"
+                  >Support</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://status.riotgames.com"
+                  target="_blank"
+                  rel="noopener"
+                  >État des serveurs</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Réseaux sociaux -->
+          <div class="footer-social">
+            <h4>Suivez-nous</h4>
+            <div class="social-links">
+              <a href="#" aria-label="Discord"
+                ><i class="fab fa-discord"></i
+              ></a>
+              <a href="#" aria-label="Twitter"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a href="#" aria-label="YouTube"
+                ><i class="fab fa-youtube"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Séparateur -->
+        <hr class="footer-divider" />
+
+        <!-- Mentions légales -->
+        <div class="footer-legal">
+          <small>
+            Site non officiel — Projet fan-made. League of Legends™ et Riot
+            Games™ sont des marques déposées de Riot Games, Inc.
+          </small>
+          <div class="legal-links">
+            <a href="#">Mentions légales</a>
+            <a href="#">Confidentialité</a>
+            <a href="#">Conditions d'utilisation</a>
+          </div>
+        </div>
       </div>
     </footer>
   </body>
