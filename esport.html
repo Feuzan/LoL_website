@@ -1,167 +1,216 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
-<head>
-  <!-- Standard meta configuration -->
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>League Fan Hub — Esport</title>
+  <head>
+    <!-- Standard meta configuration -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>LoL - Esport</title>
 
-  <!-- External resources -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
-  <link rel="icon" type="image/png" href="assets/Logo.png">
-  <script src="script.js" defer></script>
-</head>
-<body>
-  <!-- Site header and navigation -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <div class="brand">
-        <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/d/d8/League_of_Legends_2019_vector.svg" alt="League">
-        <div>
-          <h1 class="brand-title">League Fan Hub</h1>
-          <p class="brand-sub">Esport</p>
+    <!-- External resources -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" href="assets/Logo.png" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <!-- Site header and navigation -->
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="brand">
+          <img
+            class="logo"
+            src="https://upload.wikimedia.org/wikipedia/commons/d/d8/League_of_Legends_2019_vector.svg"
+            alt="League"
+          />
+          <div>
+            <h1 class="brand-title">Esport</h1>
+            <p class="brand-sub">dans le monde</p>
+          </div>
         </div>
+
+        <nav class="main-nav" aria-label="Navigation principale">
+          <a href="index.html" class="nav-link">Accueil</a>
+          <a href="presentation.html" class="nav-link">Présentation</a>
+          <a href="champions.html" class="nav-link">Champions</a>
+          <a href="univers.html" class="nav-link">Univers Étendu</a>
+          <a href="esport.html" class="nav-link active">Esport</a>
+        </nav>
+
+        <button id="menuToggle5" class="hamburger" aria-label="Ouvrir le menu">
+          ☰
+        </button>
       </div>
+    </header>
 
-      <nav class="main-nav" aria-label="Navigation principale">
-        <a href="index.html" class="nav-link">Accueil</a>
-        <a href="presentation.html" class="nav-link">Présentation</a>
-        <a href="champions.html" class="nav-link">Champions</a>
-        <a href="univers.html" class="nav-link">Univers Étendu</a>
-        <a href="esport.html" class="nav-link active">Esport</a>
-      </nav>
+    <!-- Main content area -->
+    <main class="container">
+      <!-- Overview: quick intro -->
+      <section class="page card" aria-labelledby="esport-h1">
+        <h2 id="esport-h1">La scène esport de League of Legends</h2>
+        <p class="muted">
+          Compétitions majeures : LEC, LCS, LCK, MSI, Worlds. Pour récupérer
+          résultats live, il faut se connecter à des APIs esportives ou flux
+          officiels.
+        </p>
+      </section>
 
-      <button id="menuToggle5" class="hamburger" aria-label="Ouvrir le menu">☰</button>
-    </div>
-  </header>
+      <!-- Recent results / recap -->
+      <section class="card" aria-labelledby="recent-results">
+        <h3 id="recent-results">Récapitulatif récent</h3>
+        <p class="muted">
+          Résultats et faits marquants des dernières compétitions.
+        </p>
+        <ul>
+          <li><strong>Worlds 2023</strong> — Vainqueur : T1 (exemple)</li>
+          <li><strong>MSI 2024</strong> — Vainqueur : RNG (exemple)</li>
+          <li>
+            <strong>LEC Spring 2025</strong> — Vainqueur : G2 Esports (exemple)
+          </li>
+        </ul>
+        <p class="muted small">
+          Les données ci-dessus sont des exemples. Pour des résultats live,
+          consultez les liens officiels ci-dessous.
+        </p>
+      </section>
 
-  <!-- Main content area -->
-  <main class="container">
-    <!-- Overview: quick intro -->
-    <section class="page card" aria-labelledby="esport-h1">
-      <h2 id="esport-h1">La scène esport de League of Legends</h2>
-      <p class="muted">Compétitions majeures : LEC, LCS, LCK, MSI, Worlds. Pour récupérer résultats live, il faut se connecter à des APIs esportives ou flux officiels.</p>
-    </section>
+      <!-- Upcoming calendar -->
+      <section class="card" aria-labelledby="upcoming">
+        <h3 id="upcoming">Calendrier à venir</h3>
+        <table class="card-table" aria-describedby="upcoming-desc">
+          <caption id="upcoming-desc" class="muted">
+            Principaux événements à court terme
+          </caption>
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Événement</th>
+              <th>Lieu / Format</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2025-03-12</td>
+              <td>Playoffs LEC Spring</td>
+              <td>Online / BO5</td>
+            </tr>
+            <tr>
+              <td>2025-05-10</td>
+              <td>MSI</td>
+              <td>International — format mixte</td>
+            </tr>
+            <tr>
+              <td>2025-10-XX</td>
+              <td>Worlds</td>
+              <td>Championnats du Monde</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
 
-    <!-- Recent results / recap -->
-    <section class="card" aria-labelledby="recent-results">
-      <h3 id="recent-results">Récapitulatif récent</h3>
-      <p class="muted">Résultats et faits marquants des dernières compétitions.</p>
-      <ul>
-        <li><strong>Worlds 2023</strong> — Vainqueur : T1 (exemple)</li>
-        <li><strong>MSI 2024</strong> — Vainqueur : RNG (exemple)</li>
-        <li><strong>LEC Spring 2025</strong> — Vainqueur : G2 Esports (exemple)</li>
-      </ul>
-      <p class="muted small">Les données ci-dessus sont des exemples. Pour des résultats live, consultez les liens officiels ci-dessous.</p>
-    </section>
+      <!-- Top teams by region -->
+      <section class="card" aria-labelledby="top-teams">
+        <h3 id="top-teams">Équipes à surveiller</h3>
+        <p class="muted">Sélection de franchises fortes par région.</p>
+        <div class="grid cards">
+          <article class="card small">
+            <h4>LEC</h4>
+            <ul>
+              <li>G2 Esports</li>
+              <li>Fnatic</li>
+              <li>MAD Lions</li>
+              <li>Karmine Corp</li>
+            </ul>
+          </article>
 
-    <!-- Upcoming calendar -->
-    <section class="card" aria-labelledby="upcoming">
-      <h3 id="upcoming">Calendrier à venir</h3>
-      <table class="card-table" aria-describedby="upcoming-desc">
-        <caption id="upcoming-desc" class="muted">Principaux événements à court terme</caption>
-        <thead>
-          <tr>
-            <th>Date</th>
-            <th>Événement</th>
-            <th>Lieu / Format</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>2025-03-12</td>
-            <td>Playoffs LEC Spring</td>
-            <td>Online / BO5</td>
-          </tr>
-          <tr>
-            <td>2025-05-10</td>
-            <td>MSI</td>
-            <td>International — format mixte</td>
-          </tr>
-          <tr>
-            <td>2025-10-XX</td>
-            <td>Worlds</td>
-            <td>Championnats du Monde</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
+          <article class="card small">
+            <h4>LCK</h4>
+            <ul>
+              <li>T1</li>
+              <li>Gen.G</li>
+              <li>DWG KIA</li>
+            </ul>
+          </article>
 
-    <!-- Top teams by region -->
-    <section class="card" aria-labelledby="top-teams">
-      <h3 id="top-teams">Équipes à surveiller</h3>
-      <p class="muted">Sélection de franchises fortes par région.</p>
-      <div class="grid cards">
-        <article class="card small">
-          <h4>LEC</h4>
-          <ul>
-            <li>G2 Esports</li>
-            <li>Fnatic</li>
-            <li>MAD Lions</li>
-            <li>Karmine Corp</li>
-          </ul>
-        </article>
+          <article class="card small">
+            <h4>LCS</h4>
+            <ul>
+              <li>100 Thieves</li>
+              <li>TCL / NA top teams</li>
+              <li>FlyqQuest</li>
+            </ul>
+          </article>
 
-        <article class="card small">
-          <h4>LCK</h4>
-          <ul>
-            <li>T1</li>
-            <li>Gen.G</li>
-            <li>DWG KIA</li>
-          </ul>
-        </article>
+          <article class="card small">
+            <h4>Reste du monde</h4>
+            <ul>
+              <li>RNG (LPL)</li>
+              <li>EDward Gaming (LPL)</li>
+            </ul>
+          </article>
+        </div>
+      </section>
 
-        <article class="card small">
-          <h4>LCS</h4>
-          <ul>
-            <li>100 Thieves</li>
-            <li>TCL / NA top teams</li>
-            <li>FlyqQuest</li>
-          </ul>
-        </article>
+      <!-- How to follow: streaming & resources -->
+      <section class="card" aria-labelledby="follow">
+        <h3 id="follow">Suivre les compétitions</h3>
+        <p class="muted">
+          Chaînes et ressources officielles et communautaires.
+        </p>
+        <ul>
+          <li>
+            <a href="https://lolesports.com" target="_blank" rel="noopener"
+              >LoL Esports — site officiel</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.twitch.tv/riotgames"
+              target="_blank"
+              rel="noopener"
+              >Twitch — flux officiels</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.youtube.com/riotgames"
+              target="_blank"
+              rel="noopener"
+              >YouTube — highlights officiels</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://liquipedia.net/leagueoflegends/"
+              target="_blank"
+              rel="noopener"
+              >Liquipedia — historique & statistiques</a
+            >
+          </li>
+        </ul>
+      </section>
+    </main>
 
-        <article class="card small">
-          <h4>Reste du monde</h4>
-          <ul>
-            <li>RNG (LPL)</li>
-            <li>EDward Gaming (LPL)</li>
-          </ul>
-        </article>
+    <!-- Site footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <small>Site non officiel — fan project.</small>
       </div>
-    </section>
+    </footer>
 
-    <!-- How to follow: streaming & resources -->
-    <section class="card" aria-labelledby="follow">
-      <h3 id="follow">Suivre les compétitions</h3>
-      <p class="muted">Chaînes et ressources officielles et communautaires.</p>
-      <ul>
-        <li><a href="https://lolesports.com" target="_blank" rel="noopener">LoL Esports — site officiel</a></li>
-        <li><a href="https://www.twitch.tv/riotgames" target="_blank" rel="noopener">Twitch — flux officiels</a></li>
-        <li><a href="https://www.youtube.com/riotgames" target="_blank" rel="noopener">YouTube — highlights officiels</a></li>
-        <li><a href="https://liquipedia.net/leagueoflegends/" target="_blank" rel="noopener">Liquipedia — historique & statistiques</a></li>
-      </ul>
-    </section>
-  </main>
-
-  <!-- Site footer -->
-  <footer class="site-footer">
-    <div class="container">
-      <small>Site non officiel — fan project.</small>
-    </div>
-  </footer>
-
-  <!-- Small helper script: collapse long tables on mobile (optionnel) -->
-  <script>
-    // amélioration mineure: rendre les tables scrollables sur mobile
-    document.addEventListener('DOMContentLoaded', ()=> {
-      document.querySelectorAll('.card-table').forEach(t => {
-        const wrapper = document.createElement('div');
-        wrapper.style.overflowX = 'auto';
-        wrapper.appendChild(t.cloneNode(true));
-        t.replaceWith(wrapper);
+    <!-- Small helper script: collapse long tables on mobile (optionnel) -->
+    <script>
+      // amélioration mineure: rendre les tables scrollables sur mobile
+      document.addEventListener("DOMContentLoaded", () => {
+        document.querySelectorAll(".card-table").forEach((t) => {
+          const wrapper = document.createElement("div");
+          wrapper.style.overflowX = "auto";
+          wrapper.appendChild(t.cloneNode(true));
+          t.replaceWith(wrapper);
+        });
       });
-    });
-  </script>
-</body>
+    </script>
+  </body>
 </html>

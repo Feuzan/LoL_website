@@ -1,83 +1,113 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
-<head>
-  <!-- Meta tags for character encoding and responsive viewport -->
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>League Fan Hub — Univers Étendu</title>
+  <head>
+    <!-- Meta tags for character encoding and responsive viewport -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>LoL - Univers</title>
 
-  <!-- External resources and dependencies -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
-  <link rel="icon" type="image/png" href="assets/Logo.png">
-  <script src="script.js" defer></script>
-</head>
-<body>
-  <!-- Site header with branding and navigation -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <!-- Brand section with logo and title -->
-      <div class="brand">
-        <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/d/d8/League_of_Legends_2019_vector.svg" alt="League">
-        <div>
-          <h1 class="brand-title">League Fan Hub</h1>
-          <p class="brand-sub">Univers Étendu</p>
+    <!-- External resources and dependencies -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" href="assets/Logo.png" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <!-- Site header with branding and navigation -->
+    <header class="site-header">
+      <div class="container header-inner">
+        <!-- Brand section with logo and title -->
+        <div class="brand">
+          <img
+            class="logo"
+            src="https://upload.wikimedia.org/wikipedia/commons/d/d8/League_of_Legends_2019_vector.svg"
+            alt="League"
+          />
+          <div>
+            <h1 class="brand-title">Univers étendu</h1>
+            <p class="brand-sub">Exploration de Runeterra</p>
+          </div>
         </div>
+
+        <!-- Main navigation menu -->
+        <nav class="main-nav">
+          <a href="index.html" class="nav-link">Accueil</a>
+          <a href="presentation.html" class="nav-link">Présentation</a>
+          <a href="champions.html" class="nav-link">Champions</a>
+          <a href="univers.html" class="nav-link active">Univers Étendu</a>
+          <a href="esport.html" class="nav-link">Esport</a>
+        </nav>
+
+        <!-- Mobile menu toggle button -->
+        <button id="menuToggle4" class="hamburger" aria-label="Ouvrir le menu">
+          ☰
+        </button>
       </div>
+    </header>
 
-      <!-- Main navigation menu -->
-      <nav class="main-nav">
-        <a href="index.html" class="nav-link">Accueil</a>
-        <a href="presentation.html" class="nav-link">Présentation</a>
-        <a href="champions.html" class="nav-link">Champions</a>
-        <a href="univers.html" class="nav-link active">Univers Étendu</a>
-        <a href="esport.html" class="nav-link">Esport</a>
-      </nav>
+    <!-- Main content area -->
+    <main class="container">
+      <!-- Extended universe content section -->
+      <section class="page">
+        <!-- Section header -->
+        <h2>Contenu alternatif & adaptations</h2>
+        <p class="muted">
+          Arcane, Riot Forge, romans, comics et autres médias explorent
+          l'univers de Runeterra sous de nouvelles formes.
+        </p>
 
-      <!-- Mobile menu toggle button -->
-      <button id="menuToggle4" class="hamburger" aria-label="Ouvrir le menu">☰</button>
-    </div>
-  </header>
+        <!-- Media cards grid -->
+        <div class="card-grid">
+          <!-- Arcane series card -->
+          <article class="card large">
+            <img
+              src="https://static.wikia.nocookie.net/leagueoflegends/images/6/63/Arcane_Season_1_Poster.jpg"
+              alt="Arcane"
+            />
+            <h3>Arcane</h3>
+            <p>
+              Série Prime / Netflix explorant Piltover & Zaun — direction
+              artistique et storytelling remarqués.
+            </p>
+          </article>
 
-  <!-- Main content area -->
-  <main class="container">
-    <!-- Extended universe content section -->
-    <section class="page">
-      <!-- Section header -->
-      <h2>Contenu alternatif & adaptations</h2>
-      <p class="muted">Arcane, Riot Forge, romans, comics et autres médias explorent l'univers de Runeterra sous de nouvelles formes.</p>
+          <!-- Riot Forge card -->
+          <article class="card large">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/1/12/Riot_Forge_logo.png"
+              alt="Riot Forge"
+            />
+            <h3>Riot Forge</h3>
+            <p>
+              Label publishing: jeux solos dans l'univers LoL (Ruined King, The
+              Mageseeker...).
+            </p>
+          </article>
 
-      <!-- Media cards grid -->
-      <div class="card-grid">
-        <!-- Arcane series card -->
-        <article class="card large">
-          <img src="https://static.wikia.nocookie.net/leagueoflegends/images/6/63/Arcane_Season_1_Poster.jpg" alt="Arcane">
-          <h3>Arcane</h3>
-          <p>Série Prime / Netflix explorant Piltover & Zaun — direction artistique et storytelling remarqués.</p>
-        </article>
+          <!-- Legends of Runeterra card -->
+          <article class="card large">
+            <img
+              src="https://cdn.mos.cms.futurecdn.net/bBTTv7ffhtHKbBLb4mtn8h.jpg"
+              alt="Legends of Runeterra"
+            />
+            <h3>Legends of Runeterra</h3>
+            <p>
+              Jeu de cartes tactique qui approfondit le lore des régions et
+              champions.
+            </p>
+          </article>
+        </div>
+      </section>
+    </main>
 
-        <!-- Riot Forge card -->
-        <article class="card large">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/1/12/Riot_Forge_logo.png" alt="Riot Forge">
-          <h3>Riot Forge</h3>
-          <p>Label publishing: jeux solos dans l'univers LoL (Ruined King, The Mageseeker...).</p>
-        </article>
-
-        <!-- Legends of Runeterra card -->
-        <article class="card large">
-          <img src="https://cdn.mos.cms.futurecdn.net/bBTTv7ffhtHKbBLb4mtn8h.jpg" alt="Legends of Runeterra">
-          <h3>Legends of Runeterra</h3>
-          <p>Jeu de cartes tactique qui approfondit le lore des régions et champions.</p>
-        </article>
+    <!-- Site footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <small>Sources officielles et médias partenaires.</small>
       </div>
-    </section>
-  </main>
-
-  <!-- Site footer -->
-  <footer class="site-footer">
-    <div class="container">
-      <small>Sources officielles et médias partenaires.</small>
-    </div>
-  </footer>
-</body>
+    </footer>
+  </body>
 </html>

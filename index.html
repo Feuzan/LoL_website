@@ -1,97 +1,122 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
-<head>
-  <!-- Meta tags for character encoding and responsive viewport -->
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>League Fan Hub — Accueil</title>
+  <head>
+    <!-- Meta tags for character encoding and responsive viewport -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>LoL - main page</title>
 
-  <!-- External fonts from Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- External fonts from Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Site styles and scripts -->
-  <link rel="stylesheet" href="style.css" />
-  <link rel="icon" type="image/png" href="assets/Logo.png">
-  <script src="script.js" defer></script>
-</head>
-<body>
-  <!-- Site header with logo, title and navigation -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <div class="brand">
-        <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/d/d8/League_of_Legends_2019_vector.svg" alt="League of Legends">
-        <div>
-          <h1 class="brand-title">League Fan Hub</h1>
-          <p class="brand-sub">Univers • Champions • Esport</p>
+    <!-- Site styles and scripts -->
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" href="assets/Logo.png" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <!-- Site header with logo, title and navigation -->
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="brand">
+          <img
+            class="logo"
+            src="https://upload.wikimedia.org/wikipedia/commons/d/d8/League_of_Legends_2019_vector.svg"
+            alt="League of Legends"
+          />
+          <div>
+            <h1 class="brand-title">League of Legends</h1>
+            <p class="brand-sub">le MOBA le plus connu au monde !</p>
+          </div>
         </div>
+
+        <nav class="main-nav" aria-label="Navigation principale">
+          <a href="index.html" class="nav-link active">Accueil</a>
+          <a href="presentation.html" class="nav-link">Présentation</a>
+          <a href="champions.html" class="nav-link">Champions</a>
+          <a href="univers.html" class="nav-link">Univers Étendu</a>
+          <a href="esport.html" class="nav-link">Esport</a>
+        </nav>
+
+        <button id="menuToggle" class="hamburger" aria-label="Ouvrir le menu">
+          ☰
+        </button>
       </div>
+    </header>
 
-      <nav class="main-nav" aria-label="Navigation principale">
-        <a href="index.html" class="nav-link active">Accueil</a>
-        <a href="presentation.html" class="nav-link">Présentation</a>
-        <a href="champions.html" class="nav-link">Champions</a>
-        <a href="univers.html" class="nav-link">Univers Étendu</a>
-        <a href="esport.html" class="nav-link">Esport</a>
-      </nav>
-
-      <button id="menuToggle" class="hamburger" aria-label="Ouvrir le menu">☰</button>
-    </div>
-  </header>
-
-  <!-- Main content area -->
-  <main class="container">
-    <!-- Hero section with call-to-action -->
-    <section class="hero card">
-      <div class="hero-left">
-        <h2>Entrez dans l'univers de <span class="accent">Runeterra</span></h2>
-        <p>Parcourez les fiches champions, découvrez les adaptations officielles (Arcane, Riot Forge...) et suivez la scène esport.</p>
-        <div class="hero-actions">
-          <a class="btn primary" href="champions.html">Explorer les champions</a>
-          <a class="btn ghost" href="univers.html">Découvrir l'univers</a>
-        </div>
-      </div>
-
-      <aside class="hero-side">
-        <div class="card small">
-          <h3>À la une — Arcane</h3>
-          <img src="assets/arcane_poster.jpg" alt="Arcane poster" width="200px">
-          <p class="muted">Série animée officielle — Piltover & Zaun.</p>
+    <!-- Main content area -->
+    <main class="container">
+      <!-- Hero section with call-to-action -->
+      <section class="hero card">
+        <div class="hero-left">
+          <h2>
+            Entrez dans l'univers de <span class="accent">Runeterra</span>
+          </h2>
+          <p>
+            Parcourez les fiches champions, découvrez les adaptations
+            officielles (Arcane, Riot Forge...) et suivez la scène esport.
+          </p>
+          <div class="hero-actions">
+            <a class="btn primary" href="champions.html"
+              >Explorer les champions</a
+            >
+            <a class="btn ghost" href="univers.html">Découvrir l'univers</a>
+          </div>
         </div>
 
-        <div class="card small">
+        <aside class="hero-side">
+          <div class="card small">
+            <h3>À la une — Arcane</h3>
+            <img
+              src="assets/arcane_poster.jpg"
+              alt="Arcane poster"
+              width="200px"
+            />
+            <p class="muted">Série animée officielle — Piltover & Zaun.</p>
+          </div>
+
+          <div class="card small">
+            <h3>Esport</h3>
+            <p class="muted">Worlds, LEC, LCK — l'actualité compétitive.</p>
+          </div>
+        </aside>
+      </section>
+
+      <!-- Feature cards grid -->
+      <section class="grid cards">
+        <article class="card">
+          <h3>Champions</h3>
+          <p class="muted">
+            Liste complète et interactive via Data Dragon (Riot CDN).
+          </p>
+          <a class="btn" href="champions.html">Voir les champions</a>
+        </article>
+
+        <article class="card">
+          <h3>Univers & Contenu alternatif</h3>
+          <p class="muted">Arcane, Riot Forge, romans et plus.</p>
+          <a class="btn" href="univers.html">Explorer l'univers</a>
+        </article>
+
+        <article class="card">
           <h3>Esport</h3>
-          <p class="muted">Worlds, LEC, LCK — l'actualité compétitive.</p>
-        </div>
-      </aside>
-    </section>
+          <p class="muted">Compétitions mondiales et ressources.</p>
+          <a class="btn" href="esport.html">Voir l'esport</a>
+        </article>
+      </section>
+    </main>
 
-    <!-- Feature cards grid -->
-    <section class="grid cards">
-      <article class="card">
-        <h3>Champions</h3>
-        <p class="muted">Liste complète et interactive via Data Dragon (Riot CDN).</p>
-        <a class="btn" href="champions.html">Voir les champions</a>
-      </article>
-
-      <article class="card">
-        <h3>Univers & Contenu alternatif</h3>
-        <p class="muted">Arcane, Riot Forge, romans et plus.</p>
-        <a class="btn" href="univers.html">Explorer l'univers</a>
-      </article>
-
-      <article class="card">
-        <h3>Esport</h3>
-        <p class="muted">Compétitions mondiales et ressources.</p>
-        <a class="btn" href="esport.html">Voir l'esport</a>
-      </article>
-    </section>
-  </main>
-
-  <!-- Site footer -->
-  <footer class="site-footer">
-    <div class="container">
-      <small>Site non officiel — fan project. Données champions : Data Dragon (Riot). Images & contenus : Riot Games / tiers.</small>
-    </div>
-  </footer>
-</body>
+    <!-- Site footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <small
+          >Site non officiel — fan project. Données champions : Data Dragon
+          (Riot). Images & contenus : Riot Games / tiers.</small
+        >
+      </div>
+    </footer>
+  </body>
 </html>
