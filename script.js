@@ -7,34 +7,18 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!hdr) return;
       const nav = hdr.querySelector(".main-nav");
       if (!nav) return;
-      
+
       // Toggle menu
       const isOpen = nav.classList.toggle("open");
-      
+
       // Toggle hamburger icon
       btn.textContent = isOpen ? "✕" : "☰";
-      
+
       // Prevent body scroll when menu is open
       document.body.style.overflow = isOpen ? "hidden" : "";
-      
-      // Create/remove overlay
-      if (isOpen) {
-        const overlay = document.createElement("div");
-        overlay.className = "menu-overlay";
-        overlay.addEventListener("click", () => {
-          nav.classList.remove("open");
-          btn.textContent = "☰";
-          document.body.style.overflow = "";
-          overlay.remove();
-        });
-        document.body.appendChild(overlay);
-      } else {
-        const overlay = document.querySelector(".menu-overlay");
-        if (overlay) overlay.remove();
-      }
     });
   });
-  
+
   // Close menu when clicking on a link
   document.querySelectorAll(".main-nav .nav-link").forEach((link) => {
     link.addEventListener("click", () => {
@@ -59,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
       a.classList.remove("active");
     }
   });
-  
+
   // Close menu on window resize to desktop
   window.addEventListener("resize", () => {
     if (window.innerWidth >= 800) {
