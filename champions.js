@@ -1,6 +1,6 @@
 /* champions.js
    Charge la version la plus récente Data Dragon puis data/fr_FR/champion.json
-   et affiche les champions dans la grille. Pas de clé API nécessaire.
+   et affiche les champions dans la grille. Permet de filtrer par nom et rôle.
 */
 
 // Kept behaviour, simplified guards and DOM access
