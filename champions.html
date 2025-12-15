@@ -62,9 +62,47 @@
           placeholder="Rechercher un champion"
           aria-label="Rechercher champion"
         />
-        <select id="filterRole" aria-label="Filtrer par rôle">
-          <option value="">Tous rôles</option>
-        </select>
+        <div class="role-filter" id="roleFilter">
+          <button
+            class="filter-toggle"
+            id="filterToggle"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            Rôles <i class="fas fa-chevron-down" aria-hidden="true"></i>
+          </button>
+
+          <div
+            class="filter-panel"
+            id="filterPanel"
+            role="dialog"
+            aria-label="Filtrer par rôle"
+          >
+            <input
+              class="filter-search"
+              id="filterRoleSearch"
+              type="search"
+              placeholder="Rechercher un rôle"
+              aria-label="Rechercher un rôle"
+            />
+            <div class="role-list" id="roleList" aria-live="polite"></div>
+            <div
+              style="
+                display: flex;
+                gap: 8px;
+                margin-top: 8px;
+                justify-content: flex-end;
+              "
+            >
+              <button class="btn ghost" id="clearRoles" type="button">
+                Effacer
+              </button>
+              <button class="btn primary" id="applyRoles" type="button">
+                Appliquer
+              </button>
+            </div>
+          </div>
+        </div>
       </section>
 
       <!-- Dynamic champion grid populated by champions.js -->

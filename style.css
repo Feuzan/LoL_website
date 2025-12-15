@@ -340,6 +340,297 @@ img {
 }
 
 /* ============================================
+   ROLE FILTER DROPDOWN (Volet déroulant pour filtrer par rôle)
+   ============================================ */
+.role-filter {
+  position: relative;
+  display: inline-block;
+}
+
+.filter-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--glass);
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  font-weight: 700;
+  transition: box-shadow 0.16s, border-color 0.16s, transform 0.12s;
+}
+
+.filter-toggle:hover {
+  border-color: var(--accent);
+  color: var(--text);
+  box-shadow: 0 6px 20px rgba(185, 143, 43, 0.06);
+  transform: translateY(-1px);
+}
+
+.filter-panel {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  min-width: 240px;
+  background: var(--panel);
+  border: 1px solid var(--glass);
+  border-radius: var(--radius);
+  padding: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  z-index: 200;
+  opacity: 0;
+  transform: translateY(-6px) scale(0.98);
+  transform-origin: top right;
+  transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s;
+  visibility: hidden;
+}
+
+.role-filter.open .filter-panel {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  visibility: visible;
+}
+
+.filter-search {
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.02);
+  background: transparent;
+  color: inherit;
+  margin-bottom: 8px;
+}
+
+.role-list {
+  max-height: 220px;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-right: 4px;
+}
+
+.role-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.12s, border-color 0.12s;
+}
+
+.role-item:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.role-item input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--accent);
+}
+
+.role-badge {
+  margin-left: auto;
+  background: rgba(185, 143, 43, 0.08);
+  color: var(--accent);
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  border: 1px solid rgba(185, 143, 43, 0.12);
+}
+
+/* Enhancements: visual polish for the role filter panel */
+.role-filter {
+  --panel-shadow: 0 14px 40px rgba(3, 6, 12, 0.6);
+}
+
+.filter-panel {
+  backdrop-filter: blur(6px) saturate(120%);
+  background: linear-gradient(
+    180deg,
+    rgba(20, 22, 28, 0.88),
+    rgba(14, 17, 22, 0.96)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  box-shadow: var(--panel-shadow);
+  padding: 12px;
+}
+
+.filter-toggle {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.01), transparent);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.role-filter.open .filter-toggle {
+  box-shadow: 0 10px 30px rgba(123, 95, 31, 0.12);
+  border-color: rgba(185, 143, 43, 0.12);
+}
+
+.role-filter .filter-toggle i {
+  transition: transform 0.2s ease;
+  display: inline-block;
+  transform-origin: center;
+}
+.role-filter.open .filter-toggle i {
+  transform: rotate(180deg);
+}
+
+.role-list {
+  border-radius: 8px;
+  padding: 6px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.01), transparent);
+}
+
+/* nicer separators between items */
+.role-item {
+  padding: 10px 8px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+}
+.role-item + .role-item {
+  margin-top: 6px;
+}
+
+/* custom checkbox look while keeping native focus/checked behaviour */
+.role-item input[type="checkbox"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 4px;
+  background: transparent;
+  display: inline-block;
+  position: relative;
+  flex-shrink: 0;
+}
+.role-item input[type="checkbox"]:checked {
+  background: linear-gradient(180deg, var(--gold-gradient));
+  border-color: rgba(185, 143, 43, 0.25);
+}
+.role-item input[type="checkbox"]:focus {
+  outline: 2px solid rgba(185, 143, 43, 0.14);
+  outline-offset: 2px;
+}
+
+/* show check mark using ::after on the checkbox (works when appearance none) */
+.role-item input[type="checkbox"]:checked::after {
+  content: "\2713";
+  position: absolute;
+  left: 3px;
+  top: -1px;
+  font-size: 14px;
+  color: #08121a;
+}
+
+/* emphasize selected label text and badge */
+.role-item input[type="checkbox"]:checked + span {
+  color: var(--text);
+  font-weight: 700;
+}
+.role-item input[type="checkbox"]:checked ~ .role-badge {
+  background: linear-gradient(
+    180deg,
+    rgba(209, 178, 90, 0.95),
+    rgba(166, 124, 35, 0.95)
+  );
+  color: #08121a;
+  border-color: rgba(185, 143, 43, 0.25);
+}
+
+/* scrollbar for long lists */
+.role-list {
+  border-radius: 8px;
+  padding: 6px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.01), transparent);
+}
+
+/* nicer separators between items */
+.role-item {
+  padding: 10px 8px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+}
+.role-item + .role-item {
+  margin-top: 6px;
+}
+
+/* custom checkbox look while keeping native focus/checked behaviour */
+.role-item input[type="checkbox"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 4px;
+  background: transparent;
+  display: inline-block;
+  position: relative;
+  flex-shrink: 0;
+}
+.role-item input[type="checkbox"]:checked {
+  background: linear-gradient(180deg, var(--gold-gradient));
+  border-color: rgba(185, 143, 43, 0.25);
+}
+.role-item input[type="checkbox"]:focus {
+  outline: 2px solid rgba(185, 143, 43, 0.14);
+  outline-offset: 2px;
+}
+
+/* show check mark using ::after on the checkbox (works when appearance none) */
+.role-item input[type="checkbox"]:checked::after {
+  content: "\2713";
+  position: absolute;
+  left: 3px;
+  top: -1px;
+  font-size: 14px;
+  color: #08121a;
+}
+
+/* emphasize selected label text and badge */
+.role-item input[type="checkbox"]:checked + span {
+  color: var(--text);
+  font-weight: 700;
+}
+.role-item input[type="checkbox"]:checked ~ .role-badge {
+  background: linear-gradient(
+    180deg,
+    rgba(209, 178, 90, 0.95),
+    rgba(166, 124, 35, 0.95)
+  );
+  color: #08121a;
+  border-color: rgba(185, 143, 43, 0.25);
+}
+
+/* mobile: larger tap targets */
+@media (max-width: 799px) {
+  .role-item {
+    padding: 12px 10px;
+  }
+  .filter-toggle {
+    padding: 12px 14px;
+  }
+}
+
+@media (max-width: 799px) {
+  .filter-panel {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: auto;
+    border-radius: var(--radius) var(--radius) 0 0;
+    padding: 16px;
+    max-height: 50vh;
+    overflow: auto;
+  }
+}
+
+/* ============================================
    CHAMPION GRID & CARDS
    ============================================ */
 .champ-grid {
@@ -691,6 +982,7 @@ img {
 /* ============================================
    PRESENTATION PAGE
    ============================================ */
+
 .gameplay-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -967,6 +1259,31 @@ img {
   color: var(--muted);
   padding: 18px;
   margin-top: 12px;
+}
+
+/* Global scrollbar styling */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    180deg,
+    rgba(185, 143, 43, 0.18),
+    rgba(185, 143, 43, 0.08)
+  );
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Firefox scrollbar styling */
+* {
+  scrollbar-color: rgba(185, 143, 43, 0.12) transparent;
+  scrollbar-width: thick;
 }
 
 /* ============================================

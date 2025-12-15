@@ -7,7 +7,14 @@
 const loader = document.getElementById("loader");
 const champGrid = document.getElementById("champGrid");
 const searchInput = document.getElementById("searchChamp");
-const filterRole = document.getElementById("filterRole");
+// Role filter elements (replaces the old <select>)
+const roleFilterEl = () => document.getElementById("roleFilter");
+const filterToggle = () => document.getElementById("filterToggle");
+const filterPanel = () => document.getElementById("filterPanel");
+const filterSearchEl = () => document.getElementById("filterRoleSearch");
+const roleListEl = () => document.getElementById("roleList");
+const clearRolesBtn = () => document.getElementById("clearRoles");
+const applyRolesBtn = () => document.getElementById("applyRoles");
 
 async function fetchLatestVersion() {
   const res = await fetch(
@@ -66,13 +73,40 @@ function createChampCard(champ, version) {
           </div>
         </div>
       `;
-      modal
-        .querySelector(".close-btn")
-        .addEventListener("click", () => modal.remove());
-      modal.addEventListener("click", (e) => {
-        if (e.target === modal) modal.remove();
+      // prevent background scroll while modal is open
+      const disableBodyScroll = () => {
+        document.documentElement.style.overflow = "hidden";
+        document.body.style.overflow = "hidden";
+      };
+      const enableBodyScroll = () => {
+        document.documentElement.style.overflow = "";
+        document.body.style.overflow = "";
+      };
+
+      modal.querySelector(".close-btn").addEventListener("click", () => {
+        modal.remove();
+        enableBodyScroll();
       });
+      modal.addEventListener("click", (e) => {
+        if (e.target === modal) {
+          modal.remove();
+          enableBodyScroll();
+        }
+      });
+      // esc to close modal
+      const escHandler = (e) => {
+        if (e.key === "Escape") {
+          if (document.body.contains(modal)) {
+            modal.remove();
+            enableBodyScroll();
+            document.removeEventListener("keydown", escHandler);
+          }
+        }
+      };
+      document.addEventListener("keydown", escHandler);
+
       document.body.appendChild(modal);
+      disableBodyScroll();
     } catch (err) {
       console.error("Erreur détail champion", err);
     }
@@ -90,10 +124,23 @@ async function initChampionsPage() {
     const data = await res.json();
     const champions = Object.values(data.data);
     const roles = [...new Set(champions.flatMap((c) => c.tags))].sort();
-    if (filterRole) {
-      filterRole.innerHTML = `<option value="">Tous rôles</option>${roles
-        .map((r) => `<option value="${r}">${r}</option>`)
-        .join("")}`;
+    // populate role list (panel)
+    if (roleListEl && roleListEl()) {
+      const counts = {};
+      champions.forEach((c) =>
+        c.tags.forEach((t) => (counts[t] = (counts[t] || 0) + 1))
+      );
+      roleListEl().innerHTML = roles
+        .map(
+          (r) => `
+            <label class="role-item" data-role="${r}">
+              <input type="checkbox" value="${r}" aria-label="Filtrer ${r}" />
+              <span>${r}</span>
+              <span class="role-badge">${counts[r] || 0}</span>
+            </label>
+          `
+        )
+        .join("");
     }
     champGrid.innerHTML = "";
     champions.forEach((ch) =>
@@ -102,21 +149,112 @@ async function initChampionsPage() {
     loader && (loader.style.display = "none");
     champGrid.style.display = "grid";
 
+    // filter function using selected roles (multi-select)
+    const getSelectedRoles = () => {
+      if (!roleListEl || !roleListEl()) return [];
+      return Array.from(
+        roleListEl().querySelectorAll('input[type="checkbox"]:checked')
+      ).map((cb) => cb.value);
+    };
+
     const filterFn = () => {
       const q = (searchInput?.value || "").toLowerCase();
-      const role = filterRole?.value || "";
+      const selected = getSelectedRoles();
       document.querySelectorAll(".champ-card").forEach((card) => {
         const name = card.querySelector("h3")?.textContent?.toLowerCase() || "";
-        const tags = (card.dataset.tags || "").toLowerCase();
-        const ok =
-          name.includes(q) &&
-          (!role || tags.split(",").includes(role.toLowerCase()));
-        card.style.display = ok ? "flex" : "none";
+        const tags = (card.dataset.tags || "").toLowerCase().split(",");
+        const matchesQuery = name.includes(q);
+        const matchesRole =
+          selected.length === 0 ||
+          selected.some((r) => tags.includes(r.toLowerCase()));
+        card.style.display = matchesQuery && matchesRole ? "flex" : "none";
       });
     };
 
+    // wire events: search input (global), checkboxes, toggle, clear/apply
     searchInput?.addEventListener("input", filterFn);
-    filterRole?.addEventListener("change", filterFn);
+
+    // checkbox changes (event delegation)
+    if (roleListEl && roleListEl()) {
+      roleListEl().addEventListener("change", (e) => {
+        if (e.target && e.target.matches('input[type="checkbox"]')) filterFn();
+      });
+    }
+
+    // toggle panel open/close and prevent background scroll when open
+    if (roleFilterEl()) {
+      const rf = roleFilterEl();
+      const toggleBtn = filterToggle();
+      const panel = filterPanel();
+
+      const disableBodyScroll = () => {
+        document.documentElement.style.overflow = "hidden";
+        document.body.style.overflow = "hidden";
+      };
+      const enableBodyScroll = () => {
+        document.documentElement.style.overflow = "";
+        document.body.style.overflow = "";
+      };
+
+      toggleBtn?.addEventListener("click", (ev) => {
+        ev.stopPropagation();
+        rf.classList.toggle("open");
+        const open = rf.classList.contains("open");
+        toggleBtn.setAttribute("aria-expanded", open ? "true" : "false");
+        if (open) {
+          filterSearchEl() && filterSearchEl().focus();
+          disableBodyScroll();
+        } else {
+          enableBodyScroll();
+        }
+      });
+
+      // click outside closes
+      document.addEventListener("click", (e) => {
+        if (!rf.contains(e.target) && rf.classList.contains("open")) {
+          rf.classList.remove("open");
+          toggleBtn.setAttribute("aria-expanded", "false");
+          enableBodyScroll();
+        }
+      });
+
+      // esc to close
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && rf.classList.contains("open")) {
+          rf.classList.remove("open");
+          toggleBtn.setAttribute("aria-expanded", "false");
+          enableBodyScroll();
+        }
+      });
+
+      // filter search inside panel
+      filterSearchEl() &&
+        filterSearchEl().addEventListener("input", (e) => {
+          const q = (e.target.value || "").toLowerCase();
+          roleListEl() &&
+            Array.from(roleListEl().children).forEach((lab) => {
+              const txt = lab.textContent?.toLowerCase() || "";
+              lab.style.display = txt.includes(q) ? "flex" : "none";
+            });
+        });
+
+      clearRolesBtn() &&
+        clearRolesBtn().addEventListener("click", () => {
+          roleListEl() &&
+            Array.from(
+              roleListEl().querySelectorAll('input[type="checkbox"]')
+            ).forEach((cb) => (cb.checked = false));
+          filterFn();
+        });
+
+      applyRolesBtn() &&
+        applyRolesBtn().addEventListener("click", () => {
+          rf.classList.remove("open");
+          filterToggle() &&
+            filterToggle().setAttribute("aria-expanded", "false");
+          enableBodyScroll();
+        });
+    }
   } catch (error) {
     loader && (loader.textContent = "Erreur lors du chargement");
     console.error(error);
