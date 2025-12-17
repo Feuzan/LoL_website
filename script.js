@@ -1,6 +1,6 @@
-// Improved mobile menu toggle with overlay
+// Amélioration du menu mobile avec superposition
 document.addEventListener("DOMContentLoaded", () => {
-  // Mobile menu toggle
+  // Basculement du menu mobile
   document.querySelectorAll('[id^="menuToggle"]').forEach((btn) => {
     btn.addEventListener("click", () => {
       const hdr = btn.closest(".site-header");
@@ -8,18 +8,18 @@ document.addEventListener("DOMContentLoaded", () => {
       const nav = hdr.querySelector(".main-nav");
       if (!nav) return;
 
-      // Toggle menu
+      // Basculer le menu
       const isOpen = nav.classList.toggle("open");
 
-      // Toggle hamburger icon
+      // Basculer l'icône hamburger
       btn.textContent = isOpen ? "✕" : "☰";
 
-      // Prevent body scroll when menu is open
+      // Empêcher le défilement du body lorsque le menu est ouvert
       document.body.style.overflow = isOpen ? "hidden" : "";
     });
   });
 
-  // Close menu when clicking on a link
+  // Fermer le menu en cliquant sur un lien
   document.querySelectorAll(".main-nav .nav-link").forEach((link) => {
     link.addEventListener("click", () => {
       const nav = link.closest(".main-nav");
@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Mark active nav link (by filename)
+  // Marquer le lien de navigation actif (par nom de fichier)
   const current = location.pathname.split("/").pop() || "index.html";
   document.querySelectorAll(".main-nav .nav-link").forEach((a) => {
     if (a.getAttribute("href") === current || a.href === location.href) {
@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Close menu on window resize to desktop
+  // Fermer le menu lors du redimensionnement de la fenêtre vers le bureau
   window.addEventListener("resize", () => {
     if (window.innerWidth >= 800) {
       const nav = document.querySelector(".main-nav.open");
@@ -57,5 +57,12 @@ document.addEventListener("DOMContentLoaded", () => {
         if (btn) btn.textContent = "☰";
       }
     }
+  });
+
+  // Basculement du thème
+  document.getElementById('themeToggle').addEventListener('click', () => {
+    document.body.classList.toggle('light-mode');
+    const isLight = document.body.classList.contains('light-mode');
+    document.getElementById('themeToggle').textContent = isLight ? '☀️' : '🌙';
   });
 });
