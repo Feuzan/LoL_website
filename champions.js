@@ -3,11 +3,11 @@
    et affiche les champions dans la grille. Permet de filtrer par nom et rôle.
 */
 
-// Kept behaviour, simplified guards and DOM access
+// Comportement conservé, gardes simplifiées et accès DOM
 const loader = document.getElementById("loader");
 const champGrid = document.getElementById("champGrid");
 const searchInput = document.getElementById("searchChamp");
-// Role filter elements (replaces the old <select>)
+// Éléments de filtre de rôle (remplace l'ancien <select>)
 const roleFilterEl = () => document.getElementById("roleFilter");
 const filterToggle = () => document.getElementById("filterToggle");
 const filterPanel = () => document.getElementById("filterPanel");
@@ -73,7 +73,7 @@ function createChampCard(champ, version) {
           </div>
         </div>
       `;
-      // prevent background scroll while modal is open
+      // empêcher le défilement de l'arrière-plan pendant que la modale est ouverte
       const disableBodyScroll = () => {
         document.documentElement.style.overflow = "hidden";
         document.body.style.overflow = "hidden";
@@ -93,7 +93,7 @@ function createChampCard(champ, version) {
           enableBodyScroll();
         }
       });
-      // esc to close modal
+      // échap pour fermer la modale
       const escHandler = (e) => {
         if (e.key === "Escape") {
           if (document.body.contains(modal)) {
@@ -124,7 +124,7 @@ async function initChampionsPage() {
     const data = await res.json();
     const champions = Object.values(data.data);
     const roles = [...new Set(champions.flatMap((c) => c.tags))].sort();
-    // populate role list (panel)
+    // remplir la liste des rôles (panneau)
     if (roleListEl && roleListEl()) {
       const counts = {};
       champions.forEach((c) =>
@@ -149,7 +149,7 @@ async function initChampionsPage() {
     loader && (loader.style.display = "none");
     champGrid.style.display = "grid";
 
-    // filter function using selected roles (multi-select)
+    // fonction de filtrage utilisant les rôles sélectionnés (multi-sélection)
     const getSelectedRoles = () => {
       if (!roleListEl || !roleListEl()) return [];
       return Array.from(
@@ -171,17 +171,17 @@ async function initChampionsPage() {
       });
     };
 
-    // wire events: search input (global), checkboxes, toggle, clear/apply
+    // connecter les événements : saisie de recherche (globale), cases à cocher, basculement, effacer/appliquer
     searchInput?.addEventListener("input", filterFn);
 
-    // checkbox changes (event delegation)
+    // changements de cases à cocher (délégation d'événement)
     if (roleListEl && roleListEl()) {
       roleListEl().addEventListener("change", (e) => {
         if (e.target && e.target.matches('input[type="checkbox"]')) filterFn();
       });
     }
 
-    // toggle panel open/close and prevent background scroll when open
+    // basculer l'ouverture/fermeture du panneau et empêcher le défilement de l'arrière-plan quand ouvert
     if (roleFilterEl()) {
       const rf = roleFilterEl();
       const toggleBtn = filterToggle();
@@ -209,7 +209,7 @@ async function initChampionsPage() {
         }
       });
 
-      // click outside closes
+      // clic à l'extérieur ferme
       document.addEventListener("click", (e) => {
         if (!rf.contains(e.target) && rf.classList.contains("open")) {
           rf.classList.remove("open");
@@ -218,7 +218,7 @@ async function initChampionsPage() {
         }
       });
 
-      // esc to close
+      // échap pour fermer
       document.addEventListener("keydown", (e) => {
         if (e.key === "Escape" && rf.classList.contains("open")) {
           rf.classList.remove("open");
@@ -227,7 +227,7 @@ async function initChampionsPage() {
         }
       });
 
-      // filter search inside panel
+      // recherche de filtre à l'intérieur du panneau
       filterSearchEl() &&
         filterSearchEl().addEventListener("input", (e) => {
           const q = (e.target.value || "").toLowerCase();

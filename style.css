@@ -1,5 +1,5 @@
 /* ============================================
-   VARIABLES & BASE
+   VARIABLES ET BASE
    ============================================ */
 :root {
   --bg: #05060b;
@@ -37,7 +37,7 @@ body.light-mode {
   color: var(--text);
 }
 
-/* Reset */
+/* Réinitialisation */
 *::before,
 *::after {
   box-sizing: border-box;
@@ -71,7 +71,7 @@ img {
 }
 
 /* ============================================
-   LAYOUT UTILITIES
+   UTILITAIRES DE MISE EN PAGE
    ============================================ */
 .container {
   max-width: var(--maxw);
@@ -96,7 +96,7 @@ img {
 }
 
 /* ============================================
-   CARDS & SURFACES
+   CARTES ET SURFACES
    ============================================ */
 .card {
   background: var(--panel-gradient);
@@ -117,7 +117,7 @@ img {
 }
 
 /* ============================================
-   HEADER & NAVIGATION
+   EN-TÊTE ET NAVIGATION
    ============================================ */
 .site-header {
   position: sticky;
@@ -218,7 +218,7 @@ img {
   transform: scale(1.1);
 }
 
-/* Menu overlay for mobile */
+/* Superposition de menu pour mobile */
 .menu-overlay {
   position: fixed;
   top: 0;
@@ -239,7 +239,7 @@ img {
 }
 
 /* ============================================
-   BUTTONS
+   BOUTONS
    ============================================ */
 .btn {
   display: inline-block;
@@ -271,7 +271,7 @@ img {
 }
 
 /* ============================================
-   HERO SECTION
+   SECTION HÉROS
    ============================================ */
 .hero {
   display: grid;
@@ -311,7 +311,7 @@ img {
 }
 
 /* ============================================
-   FORM ELEMENTS
+   ÉLÉMENTS DE FORMULAIRE
    ============================================ */
 .toolbar {
   display: flex;
@@ -365,7 +365,7 @@ img {
 }
 
 /* ============================================
-   ROLE FILTER DROPDOWN (Volet déroulant pour filtrer par rôle)
+   FILTRE DE RÔLE DÉROULANT (Volet déroulant pour filtrer par rôle)
    ============================================ */
 .role-filter {
   position: relative;
@@ -466,7 +466,7 @@ img {
   border: 1px solid rgba(185, 143, 43, 0.12);
 }
 
-/* Enhancements: visual polish for the role filter panel */
+/* Améliorations : polissage visuel pour le panneau de filtre de rôle */
 .role-filter {
   --panel-shadow: 0 14px 40px rgba(3, 6, 12, 0.6);
 }
@@ -508,7 +508,7 @@ img {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.01), transparent);
 }
 
-/* nicer separators between items */
+/* séparateurs plus jolis entre les éléments */
 .role-item {
   padding: 10px 8px;
   border-radius: 8px;
@@ -518,7 +518,7 @@ img {
   margin-top: 6px;
 }
 
-/* custom checkbox look while keeping native focus/checked behaviour */
+/* apparence de case à cocher personnalisée tout en gardant le comportement natif de focus/coché */
 .role-item input[type="checkbox"] {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -541,7 +541,7 @@ img {
   outline-offset: 2px;
 }
 
-/* show check mark using ::after on the checkbox (works when appearance none) */
+/* afficher la coche en utilisant ::after sur la case à cocher (fonctionne quand appearance none) */
 .role-item input[type="checkbox"]:checked::after {
   content: "\2713";
   position: absolute;
@@ -551,7 +551,7 @@ img {
   color: #08121a;
 }
 
-/* emphasize selected label text and badge */
+/* mettre en évidence le texte et le badge de l'étiquette sélectionnée */
 .role-item input[type="checkbox"]:checked + span {
   color: var(--text);
   font-weight: 700;
@@ -566,14 +566,14 @@ img {
   border-color: rgba(185, 143, 43, 0.25);
 }
 
-/* scrollbar for long lists */
+/* barre de défilement pour les longues listes */
 .role-list {
   border-radius: 8px;
   padding: 6px;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.01), transparent);
 }
 
-/* nicer separators between items */
+/* séparateurs plus jolis entre les éléments */
 .role-item {
   padding: 10px 8px;
   border-radius: 8px;
@@ -583,7 +583,7 @@ img {
   margin-top: 6px;
 }
 
-/* custom checkbox look while keeping native focus/checked behaviour */
+/* apparence de case à cocher personnalisée tout en gardant le comportement natif de focus/coché */
 .role-item input[type="checkbox"] {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -606,7 +606,7 @@ img {
   outline-offset: 2px;
 }
 
-/* show check mark using ::after on the checkbox (works when appearance none) */
+/* afficher la coche en utilisant ::after sur la case à cocher (fonctionne quand appearance none) */
 .role-item input[type="checkbox"]:checked::after {
   content: "\2713";
   position: absolute;
@@ -616,7 +616,7 @@ img {
   color: #08121a;
 }
 
-/* emphasize selected label text and badge */
+/* mettre en évidence le texte et le badge de l'étiquette sélectionnée */
 .role-item input[type="checkbox"]:checked + span {
   color: var(--text);
   font-weight: 700;
@@ -631,7 +631,7 @@ img {
   border-color: rgba(185, 143, 43, 0.25);
 }
 
-/* mobile: larger tap targets */
+/* mobile: cibles de tap plus grandes */
 @media (max-width: 799px) {
   .role-item {
     padding: 12px 10px;
@@ -656,7 +656,7 @@ img {
 }
 
 /* ============================================
-   CHAMPION GRID & CARDS
+   GRILLE ET CARTES DE CHAMPION
    ============================================ */
 .champ-grid {
   display: grid;
@@ -712,7 +712,7 @@ img {
 }
 
 /* ============================================
-   MODAL
+   MODALE
    ============================================ */
 .modal {
   position: fixed;
@@ -810,7 +810,7 @@ img {
 }
 
 /* ============================================
-   FEATURE CARDS (Homepage)
+   CARTES DE FONCTIONNALITÉS (Page d'accueil)
    ============================================ */
 .feature-card {
   display: flex;
@@ -830,7 +830,7 @@ img {
 }
 
 /* ============================================
-   REGIONS & UNIVERSE
+   RÉGIONS ET UNIVERS
    ============================================ */
 .card-grid {
   display: grid;
@@ -877,7 +877,7 @@ img {
 }
 
 /* ============================================
-   TOURNAMENTS & ESPORT
+   TOURNOIS ET ESPORT
    ============================================ */
 .tournament-card {
   display: flex;
@@ -927,7 +927,7 @@ img {
 }
 
 /* ============================================
-   PLATFORMS (Watch Section)
+   PLATEFORMES (Section Regarder)
    ============================================ */
 .platforms-grid {
   display: grid;
@@ -1005,7 +1005,7 @@ img {
 }
 
 /* ============================================
-   PRESENTATION PAGE
+   PAGE DE PRÉSENTATION
    ============================================ */
 
 .gameplay-grid {
@@ -1149,7 +1149,7 @@ img {
 }
 
 /* ============================================
-   TIMELINE (Universe)
+   FRISE CHRONOLOGIQUE (Univers)
    ============================================ */
 .lore-timeline {
   margin-top: 20px;
@@ -1174,7 +1174,7 @@ img {
 }
 
 /* ============================================
-   FOOTER
+   PIED DE PAGE
    ============================================ */
 .site-footer {
   background: var(--panel);
@@ -1277,7 +1277,7 @@ img {
 }
 
 /* ============================================
-   UTILITIES
+   UTILITAIRES
    ============================================ */
 .loader {
   text-align: center;
@@ -1286,7 +1286,7 @@ img {
   margin-top: 12px;
 }
 
-/* Global scrollbar styling */
+/* Style de barre de défilement globale */
 ::-webkit-scrollbar {
   width: 12px;
   height: 12px;
@@ -1305,14 +1305,14 @@ img {
   background: transparent;
 }
 
-/* Firefox scrollbar styling */
+/* Style de barre de défilement Firefox */
 * {
   scrollbar-color: rgba(185, 143, 43, 0.12) transparent;
   scrollbar-width: thick;
 }
 
 /* ============================================
-   RESPONSIVE DESIGN
+   DESIGN RESPONSIVE
    ============================================ */
 @media (max-width: 799px) {
   .main-nav {

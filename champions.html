@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="fr">
   <head>
-    <!-- Basic meta tags for character encoding and responsive viewport -->
+    <!-- Balises meta de base pour l'encodage des caractères et la fenêtre d'affichage responsive -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>LoL - Champions</title>
 
-    <!-- External resources: Google Fonts and local assets -->
+    <!-- Ressources externes : Google Fonts et ressources locales -->
     <link
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600&display=swap"
       rel="stylesheet"
@@ -18,12 +18,12 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" type="image/png" href="assets/Logo.png" />
 
-    <!-- JavaScript files with defer to load after HTML parsing -->
+    <!-- Fichiers JavaScript avec defer pour charger après l'analyse HTML -->
     <script src="champions.js" defer></script>
     <script src="script.js" defer></script>
   </head>
   <body>
-    <!-- Site header with navigation -->
+    <!-- En-tête du site avec navigation -->
     <header class="site-header">
       <div class="container header-inner">
         <div class="brand">
@@ -56,9 +56,9 @@
       </div>
     </header>
 
-    <!-- Main content area -->
+    <!-- Zone de contenu principale -->
     <main class="container">
-      <!-- Search and filter toolbar -->
+      <!-- Barre d'outils de recherche et de filtrage -->
       <section class="toolbar card">
         <input
           id="searchChamp"
@@ -109,10 +109,10 @@
         </div>
       </section>
 
-      <!-- Dynamic champion grid populated by champions.js -->
+      <!-- Grille de champions dynamique remplie par champions.js -->
       <section id="champGrid" class="champ-grid" aria-live="polite"></section>
 
-      <!-- Loading indicator -->
+      <!-- Indicateur de chargement -->
       <div id="loader" class="card loader">Chargement des champions…</div>
     </main>
 
