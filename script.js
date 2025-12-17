@@ -1,4 +1,6 @@
-// Basculement du menu mobile
+// ============================================
+// Burger menu toggle
+// ============================================
 document.querySelectorAll('[id^="menuToggle"]').forEach((btn) => {
   btn.addEventListener("click", () => {
     const hdr = btn.closest(".site-header");
@@ -17,7 +19,9 @@ document.querySelectorAll('[id^="menuToggle"]').forEach((btn) => {
   });
 });
 
-// Marquer le lien de navigation actif (par nom de fichier)
+// ============================================
+// Navigation active link
+// ============================================
 const current = location.pathname.split("/").pop() || "index.html";
 document.querySelectorAll(".main-nav .nav-link").forEach((a) => {
   if (a.getAttribute("href") === current) {
@@ -27,7 +31,9 @@ document.querySelectorAll(".main-nav .nav-link").forEach((a) => {
   }
 });
 
-// Basculement du thème
+// ============================================
+//  Dark mode toggle
+// ============================================
 document.getElementById("themeToggle").addEventListener("click", () => {
   document.body.classList.toggle("light-mode");
   const isLight = document.body.classList.contains("light-mode");
