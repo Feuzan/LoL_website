@@ -60,9 +60,9 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Basculement du thème
-  document.getElementById('themeToggle').addEventListener('click', () => {
-    document.body.classList.toggle('light-mode');
-    const isLight = document.body.classList.contains('light-mode');
-    document.getElementById('themeToggle').textContent = isLight ? '☀️' : '🌙';
+  document.getElementById("themeToggle").addEventListener("click", () => {
+    document.body.classList.toggle("light-mode");
+    const isLight = document.body.classList.contains("light-mode");
+    document.getElementById("themeToggle").textContent = isLight ? "☀️" : "🌙";
   });
 });
